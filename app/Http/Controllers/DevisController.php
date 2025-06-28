@@ -2,63 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Devis;
 use Illuminate\Http\Request;
 
 class DevisController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Affiche le formulaire public
     public function create()
     {
-        //
+        return view('devis.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Enregistre la demande de devis
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'prenom'=>'required',
+            'email' => 'required|email',
+            'numero' => 'nullable|string|max:30',
+            'message' => 'required|string',
+        ]);
+
+
+        Devis::create($request->all());
+
+        return redirect()->route('devis.create')->with('success', 'Votre demande de devis a bien été envoyée !');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Liste des devis pour l'admin
+    public function index()
     {
-        //
+        $devis = Devis::latest()->paginate(20);
+        return view('admin.devis.index', compact('devis'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Voir un devis en détail (admin)
+    public function show(Devis $devis)
     {
-        //
+        return view('admin.devis.show', compact('devis'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // Supprimer un devis (admin)
+    public function destroy(Devis $devis)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $devis->delete();
+        return redirect()->route('devis.index')->with('success', 'Devis supprimé.');
     }
 }
