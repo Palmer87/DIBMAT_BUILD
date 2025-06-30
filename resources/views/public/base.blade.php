@@ -31,6 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('public.home') }}">Articles</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('public.devis.create') }}">Devis</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('public.contact.create') }}">Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('public.projets.index') }}">Projets</a></li>
                 </ul>
             </div>
         </div>

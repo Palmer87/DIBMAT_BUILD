@@ -37,7 +37,7 @@
             <thead class="orange-theme">
                 <tr>
                     <th>Titre</th>
-                    <th>Dtate</th>
+                    <th>Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>

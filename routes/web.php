@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjetController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DevisController;
 use App\Http\Controllers\ArticleController;
@@ -20,7 +21,11 @@ use App\Http\Controllers\Admin\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
+
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 
 
@@ -40,12 +45,15 @@ Route::get('/devis', [DevisController::class, 'create'])->name('public.devis.cre
 Route::post('/devis', [DevisController::class, 'store'])->name('public.devis.store');
 Route::get('/contact', [MessageController::class, 'create'])->name('public.contact.create');
 Route::post('/contact', [MessageController::class, 'store'])->name('public.contact.store');
+Route::get('/projets',[ProjetController::class,'indexpublic'])->name('public.projets.index');
+Route::get('/projets/{projet}', [ProjetController::class,'showpublic'])->name('public.projets.show');
 
 // Routes back-office (protégées par auth)
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('articles', ArticleController::class)->except(['index', 'show']);
     Route::resource('devis', DevisController::class)->only(['index', 'show', 'destroy']);
+    Route ::resource('projets', ProjetController::class);
     Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy',  'repondre','reponse']);
     Route::post('messages/repondre/{message}',[MessageController::class,'repondre'])->name('messages.repondre');
     Route::get('messages/reponse/{message}',[MessageController::class,'reponse'])->name('messages.reponse');

@@ -31,6 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.articles.index') }}">Articles</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('devis.index') }}">Devis</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('messages.index') }}">Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('projets.index') }}">Projets</a></li>
                 </ul>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
