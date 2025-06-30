@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Devis;
 use App\Models\Article;
 use App\Models\Message;
+use App\Models\Projet;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,8 @@ class DashboardController extends Controller
         $nbDevis = Devis::count();
         $nbArticles = Article::count();
         $nbMessages = Message::count();
+        $nbProjets = Projet::count(); // Assuming you have a Projet model
 
-        return view('admin.dashboard', compact('nbDevis', 'nbArticles', 'nbMessages'));
+        return view('dashboard', compact('nbDevis', 'nbProjets', 'nbArticles', 'nbMessages'));
     }
 }

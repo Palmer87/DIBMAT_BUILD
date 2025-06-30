@@ -39,13 +39,10 @@
                     </div>
 
                     <div class="d-flex justify-content-between">
-                        <a href="{{ route('messages.index') }}" class="btn btn-secondary">
+                        <a href="{{ route('messages.index') }}" class="btn btn-orange">
                             <i class="bi bi-arrow-left-circle"></i> Retour
                         </a>
 
-                        <a href="{{ route('messages.reponse', $message->id) }}" class="btn btn-orange">
-                            <i class="bi bi-reply"></i> Répondre
-                        </a>
                     </div>
                 </div>
             </div>

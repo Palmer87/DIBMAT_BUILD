@@ -56,16 +56,12 @@
                             <a href="{{ route('messages.show', $message) }}" class="btn btn-sm btn-orange me-2">
                                 Voir
                             </a>
-                            <a href="{{ route('messages.reponse', $message) }}" class="btn btn-sm btn-orange me-2">
-                                Répondre
-                            </a>
                             <form action="{{ route('messages.destroy', $message) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn-delete" onclick="return confirm('Supprimer ce message ?')">
+                                <button type="submit" class="btn btn-sm btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?')">
                                     Supprimer
                                 </button>
-                            </form>
                         </td>
                     </tr>
                 @empty
