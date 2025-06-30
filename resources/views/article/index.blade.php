@@ -1,4 +1,4 @@
-@extends('base')
+@extends('public.base')
 
 @section('title', 'Nos Articles')
 
@@ -38,7 +38,7 @@
             <p class="card-text text-muted">
                 {{ Str::limit($article->contenu, 100) }}
             </p>
-            <a href="{{ route('articles.show', $article) }}" class="text-orange fw-bold text-decoration-none">
+            <a href="{{ route('public.articles.show', $article) }}" class="text-orange fw-bold text-decoration-none">
                 Lire plus <i class="bi bi-arrow-right-short"></i>
             </a>
         </div>

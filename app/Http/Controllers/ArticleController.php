@@ -19,8 +19,8 @@ class ArticleController extends Controller
     // Détail d'un article public
     public function show(Article $article)
     {
-        abort_unless($article->publie, 404);
-        return view('articles.show', compact('article'));
+
+        return view('article.show', compact('article'));
     }
 
     // Liste des articles pour l'admin
@@ -64,7 +64,7 @@ class ArticleController extends Controller
     // Formulaire d'édition (admin)
     public function edit(Article $article)
     {
-        return view('admin.articles.edit', compact('article'));
+        return view('admin.article.edit', compact('article'));
     }
 
     // Mise à jour d'un article (admin)
@@ -73,20 +73,19 @@ class ArticleController extends Controller
         $request->validate([
             'titre' => 'required|string|max:255',
             'contenu' => 'required|string',
-            'publie' => 'boolean',
         ]);
 
         $article->update([
             'titre' => $request->titre,
             'contenu' => $request->contenu,
-            'publie' => $request->has('publie'),
+
         ]);
 
-        return redirect()->route('articles.index')->with('success', 'Article mis à jour.');
+        return redirect()->route('admin.articles.index')->with('success', 'Article mis à jour.');
     }
 
     // Suppression d'un article (admin)
-    public function destroy(Article $article)
+    public function destroy(Article $article, Request $request)
     {
         $article->delete();
         return redirect()->route('admin.articles.index')->with('success', 'Article supprimé.');

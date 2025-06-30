@@ -2,63 +2,68 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Formulaire public de contact
     public function create()
     {
-        //
+        return view('contact.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Enregistrement du message public
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
+
+        Message::create($request->all());
+
+        return redirect()->route('public.contact.create')->with('success', 'Votre message a bien été envoyé !');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Liste des messages pour l'admin
+    public function index()
     {
-        //
+        $messages = Message::latest()->paginate(20);
+        return view('admin.message.index', compact('messages'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Voir un message en détail (admin)
+    public function show(Message $message)
     {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return view('admin.message.show', compact('message'));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+   /* public function reponse(Message $message) {
+        $message->get();
+        return view('admin.message.reponse',compact('message'));
+    }
+    //public function repondre(Request $request, Message $message)
     {
-        //
+        $request->validate([
+            'reponse' => 'required|string',
+        ]);
+
+        $message->update([
+            'reponse' => $request->input('reponse'),
+            'reponse_at' => now(),
+        ]);
+
+
+
+        return redirect()->route('message.show', $message)->with('success', 'Réponse envoyée.');
+   // }*/
+
+    // Supprimer un message (admin)
+    public function destroy(Message $message)
+    {
+        $message->delete();
+        return redirect()->route('message.index')->with('success', 'Message supprimé.');
     }
 }

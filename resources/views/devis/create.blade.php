@@ -1,4 +1,4 @@
-@extends('base')
+@extends('public.base')
 
 @section('title', 'Demander un devis')
 
@@ -18,7 +18,7 @@
 <div class="container py-4">
     <h1 class="h4 mb-4 text-dark">Demander un devis</h1>
 
-    <form action="{{ route('devis.store') }}" method="POST" class="bg-white p-4 rounded shadow-sm">
+    <form action="{{ route('public.devis.store') }}" method="POST" class="bg-white p-4 rounded shadow-sm">
         @csrf
 
         <div class="mb-3">

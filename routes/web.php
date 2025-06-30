@@ -34,19 +34,21 @@ Route::middleware('auth')->group(function () {
 
 
 // Routes publiques
-Route::get('/', [ArticleController::class, 'index'])->name('home');
-Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
-Route::get('/devis', [DevisController::class, 'create'])->name('devis.create');
-Route::post('/devis', [DevisController::class, 'store'])->name('devis.store');
-Route::get('/contact', [MessageController::class, 'create'])->name('contact.create');
-Route::post('/contact', [MessageController::class, 'store'])->name('contact.store');
+Route::get('/', [ArticleController::class, 'index'])->name('public.home');
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('public.articles.show');
+Route::get('/devis', [DevisController::class, 'create'])->name('public.devis.create');
+Route::post('/devis', [DevisController::class, 'store'])->name('public.devis.store');
+Route::get('/contact', [MessageController::class, 'create'])->name('public.contact.create');
+Route::post('/contact', [MessageController::class, 'store'])->name('public.contact.store');
 
 // Routes back-office (protégées par auth)
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('articles', ArticleController::class)->except(['index', 'show']);
     Route::resource('devis', DevisController::class)->only(['index', 'show', 'destroy']);
-    Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy',  'repondre','reponse']);
+    Route::post('messages/repondre/{message}',[MessageController::class,'repondre'])->name('messages.repondre');
+    Route::get('messages/reponse/{message}',[MessageController::class,'reponse'])->name('messages.reponse');
     Route::get('articles', [ArticleController::class, 'adminIndex'])->name('admin.articles.index');
 });
 

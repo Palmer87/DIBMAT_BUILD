@@ -37,7 +37,7 @@
             <thead class="orange-theme">
                 <tr>
                     <th>Titre</th>
-                    <th>Publié</th>
+                    <th>Dtate</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -45,7 +45,7 @@
                 @forelse($articles as $article)
                     <tr>
                         <td>{{ $article->titre }}</td>
-                        <td>{{ $article->publie ? 'Oui' : 'Non' }}</td>
+                        <td>{{ $article->created_at->format('d/m/Y à H:i') }}</td>
                         <td>
                             <a href="{{ route('articles.edit', $article) }}" class="btn btn-sm btn-outline-primary me-2">
                                 <i class="bi bi-pencil-square"></i> Modifier
