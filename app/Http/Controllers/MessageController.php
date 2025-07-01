@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MessageRequest;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
@@ -14,17 +15,13 @@ class MessageController extends Controller
     }
 
     // Enregistrement du message public
-    public function store(Request $request)
+    public function store(MessageRequest $request)
     {
-        $request->validate([
-            'nom' => 'required|string|max:255',
-            'email' => 'required|email',
-            'message' => 'required|string',
-        ]);
+        Message::create($request->validated());
+        // Notification de succès
+        notify()->success('Votre message a bien été envoyé !');
 
-        Message::create($request->all());
-
-        return redirect()->route('public.contact.create')->with('success', 'Votre message a bien été envoyé !');
+        return redirect()->route('public.contact.create');
     }
 
     // Liste des messages pour l'admin
@@ -35,35 +32,20 @@ class MessageController extends Controller
     }
 
     // Voir un message en détail (admin)
-    public function show(Message $message)
+    public function show($slug)
     {
+        $message = Message::where('slug', $slug)->firstOrFail();
 
         return view('admin.message.show', compact('message'));
     }
-   /* public function reponse(Message $message) {
-        $message->get();
-        return view('admin.message.reponse',compact('message'));
-    }
-    //public function repondre(Request $request, Message $message)
+
+
+    public function destroy($slug)
     {
-        $request->validate([
-            'reponse' => 'required|string',
-        ]);
+        $message = Message::where('slug', $slug)->firstOrFail();
 
-        $message->update([
-            'reponse' => $request->input('reponse'),
-            'reponse_at' => now(),
-        ]);
-
-
-
-        return redirect()->route('message.show', $message)->with('success', 'Réponse envoyée.');
-   // }*/
-
-    // Supprimer un message (admin)
-    public function destroy(Message $message)
-    {
         $message->delete();
+
         return redirect()->route('messages.index')->with('success', 'Message supprimé.');
     }
 }

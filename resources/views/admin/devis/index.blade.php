@@ -31,7 +31,8 @@
                 <tr>
                     <th>Nom</th>
                     <th>Email</th>
-                    <th>Téléphone</th>
+                    <th>Numéro</th>
+                    <th>Message</th>
                     <th>Date</th>
                     <th>Actions</th>
                 </tr>
@@ -41,13 +42,14 @@
                     <tr>
                         <td>{{ $devi->nom }}</td>
                         <td>{{ $devi->email }}</td>
-                        <td>{{ $devi->telephone }}</td>
+                        <td>{{ $devi->numero }}</td>
+                        <td>{{ $devi->message }}</td>
                         <td>{{ $devi->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <a href="{{ route('devis.show', $devi) }}" class="btn btn-sm btn-orange me-1">
+                            <a href="{{ route('devis.show', [$devi->slug,$devi->id]) }}" class="btn btn-sm btn-orange me-1">
                                 <i class="bi bi-eye"></i> Voir
                             </a>
-                            <form action="{{ route('devis.destroy', $devi) }}" method="POST" class="d-inline">
+                            <form action="{{ route('devis.destroy', [$devi->id]) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-outline-danger"

@@ -58,24 +58,33 @@ class ProjetController extends Controller
             "lieu"=> $request->lieu,
             "image"=> $request->file('image')->store('projets', 'public'),
         ]);
-        return redirect()->route("projet.index")->with("success", "Projet créé avec succès");
+        // Redirect with success message
+        notify()->success("Projet créé avec succès");
+        return redirect()->route("projet.index") ;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $name)
+    public function show($slug)
     {
-        return view("projet.show", ["projet"=> projet::find( $name) ]);
+        // Find the project by slug
+        $projet = projet::where('slug', $slug)->firstOrFail();
+
+        return view("projet.show", ["projet"=> $projet]);
     }
-    public function showpublic(string $name)
+    public function showpublic($slug)
     {
-        return view("projet.show", ["projet"=> projet::find( $name) ]);
+        // Find the project by slug
+        $projet = projet::where('slug', $slug)->firstOrFail();
+
+        return view("projet.show", compact("projet"));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
+
+
+
     public function edit(string $name)
     {
         return view("admin.projet.edit", ["projet"=> projet::find($name)]);
@@ -106,6 +115,7 @@ class ProjetController extends Controller
     }
 
     $projet->update($data);
+    notify()->success('Projet modifié avec succès');
 
     return redirect()->route('projets.index')->with('success', 'Projet modifié avec succès');
 }
@@ -117,6 +127,7 @@ public function destroy(string $id)
 {
     $projet = Projet::find($id);
     $projet->delete();
+    notify()->success("Projet supprimé avec succès");
     return redirect()->route("projets.index")->with("success", "Projet supprimé avec succès");
 }
 

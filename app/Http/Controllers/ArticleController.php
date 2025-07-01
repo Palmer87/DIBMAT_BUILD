@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,9 @@ class ArticleController extends Controller
 
 
     // Détail d'un article public
-    public function show(Article $article)
+    public function show($slug)
     {
+        $article = Article::where('slug', $slug)->firstOrFail();
 
         return view('article.show', compact('article'));
     }
@@ -37,15 +39,10 @@ class ArticleController extends Controller
     }
 
     // Enregistrement d'un article (admin)
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
 
-        $request->validate([
-    'titre' => 'required|string|max:255',
-    'contenu' => 'required|string',
-    'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-
-]);
+        $request->validated();
 
         $imagePath = null;
         if ($request->hasFile('image')) {
@@ -62,14 +59,17 @@ class ArticleController extends Controller
     }
 
     // Formulaire d'édition (admin)
-    public function edit(Article $article)
+    public function edit($slug)
     {
+        $article = Article::where('slug', $slug)->firstOrFail();
         return view('admin.article.edit', compact('article'));
     }
 
     // Mise à jour d'un article (admin)
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $slug)
     {
+        $article = Article::where('slug', $slug)->firstOrFail();
+
         $request->validate([
             'titre' => 'required|string|max:255',
             'contenu' => 'required|string',
@@ -85,9 +85,11 @@ class ArticleController extends Controller
     }
 
     // Suppression d'un article (admin)
-    public function destroy(Article $article, Request $request)
+    public function destroy($slug)
     {
+        $article = Article::where('slug', $slug)->firstOrFail();
         $article->delete();
-        return redirect()->route('admin.articles.index')->with('success', 'Article supprimé.');
+        notify()->success('Article supprimé avec succès !');
+        return redirect()->route('admin.articles.index');
     }
 }

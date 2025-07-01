@@ -38,6 +38,7 @@
                         <th>Description</th>
                         <th>Client</th>
                         <th>Catégorie</th>
+                        <th>slug</th>
                         <th>Date</th>
                         <th>Image</th>
                         <th class="text-center">Actions</th>
@@ -50,6 +51,7 @@
                             <td>{{ Str::limit($projet->description, 10) }}</td>
                             <td>{{ $projet->client }}</td>
                             <td>{{ $projet->categorie }}</td>
+                            <td>{{ $projet->slug }}</td>
                             <td>{{ $projet->date }}</td>
                             <td>
                                 <img src="{{ asset('storage/'.$projet->image) }}" alt="Image du projet" class="img-thumbnail" style="max-width: 100px;">

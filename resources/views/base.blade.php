@@ -16,8 +16,15 @@
     .text-orange:hover {
         color: #cf5d00;}
 </style>
+    <!-- Notify CSS -->
+    @notifyCss
+    <!-- Custom CSS -->
+
+    @yield('styles')
 </head>
 <body class="bg-light">
+    <!-- Notify -->
+
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,6 +47,8 @@
             </div>
         </div>
     </nav>
+     <x-notify::notify />
+    @notifyJs
 
     <!-- Contenu -->
     <main class="container py-5">

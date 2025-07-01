@@ -18,7 +18,7 @@
                             <p class="card-text">{{ Str::limit($projet->description, 100) }}</p>
                         </div>
                         <div class="card-footer">
-                            <a href="{{ route('public.projets.show', $projet->id) }}" class="btn btn-primary">Voir le projet</a>
+                            <a href="{{ route('public.projets.show', [$projet->slug, $projet->id]) }}" class="btn btn-primary">Voir le projet</a>
                         </div>
                     </div>
                 </div>

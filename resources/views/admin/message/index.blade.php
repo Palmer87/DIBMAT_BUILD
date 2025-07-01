@@ -53,10 +53,10 @@
                         <td>{{ $message->email }}</td>
                         <td>{{ $message->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <a href="{{ route('messages.show', $message) }}" class="btn btn-sm btn-orange me-2">
+                            <a href="{{ route('messages.show', [$message->slug,$message->id]) }}" class="btn btn-sm btn-orange me-2">
                                 Voir
                             </a>
-                            <form action="{{ route('messages.destroy', $message) }}" method="POST" class="d-inline">
+                            <form action="{{ route('messages.destroy', [$message->slug,$message->id]) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?')">

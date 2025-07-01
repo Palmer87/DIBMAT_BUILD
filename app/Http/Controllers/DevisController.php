@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DevisRequest;
 use App\Models\Devis;
 use Illuminate\Http\Request;
 
@@ -14,21 +15,16 @@ class DevisController extends Controller
     }
 
     // Enregistre la demande de devis
-    public function store(Request $request)
+    public function store(DevisRequest $request)
     {
-        $request->validate([
-            'nom' => 'required|string|max:255',
-            'prenom'=>'required',
-            'email' => 'required|email',
-            'numero' => 'nullable|string|max:30',
-            'message' => 'required|string',
-        ]);
-
-
-        Devis::create($request->all());
-
-        return redirect()->route('devis.create')->with('success', 'Votre demande de devis a bien été envoyée !');
+        Devis::create($request->validated());
+        notify()->success('Votre demande de devis a bien été envoyée !');
+        // Redirection avec message de succès
+        return redirect()->route('public.devis.create');
     }
+
+    // Liste des devis pour l'admin
+
 
     // Liste des devis pour l'admin
     public function index()
@@ -38,15 +34,23 @@ class DevisController extends Controller
     }
 
     // Voir un devis en détail (admin)
-    public function show(Devis $devis)
+    public function show($slug)
     {
+        $devis = Devis::where('slug', $slug)->firstOrFail();
         return view('admin.devis.show', compact('devis'));
     }
 
     // Supprimer un devis (admin)
-    public function destroy(Devis $devis)
+    public function destroy(  $id)
     {
+        $devis = Devis::where('id', $id)->firstOrFail();
+        // Vérification de l'existence du devis
+        if (!$devis) {
+            return redirect()->route('devis.index')->with('error', 'Devis non trouvé.');
+        }
         $devis->delete();
-        return redirect()->route('devis.index')->with('success', 'Devis supprimé.');
+        // Notification de succès
+        notify()->success('Devis supprimé avec succès !');
+        return redirect()->route('devis.index');
     }
 }
