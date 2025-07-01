@@ -60,7 +60,7 @@ class ProjetController extends Controller
         ]);
         // Redirect with success message
         notify()->success("Projet créé avec succès");
-        return redirect()->route("projet.index") ;
+        return redirect()->route("projets.index") ;
     }
 
     /**

@@ -18,6 +18,16 @@
 <div class="container py-4">
     <h1 class="h4 mb-4 text-dark">Demander un devis</h1>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('public.devis.store') }}" method="POST" class="bg-white p-4 rounded shadow-sm">
         @csrf
 

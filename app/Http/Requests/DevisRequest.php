@@ -25,7 +25,7 @@ class DevisRequest extends FormRequest
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'numero' => 'nullable|numeric|max:30',
+            'numero' => 'nullable|string|max:30',
             'message' => 'required|string',
         ];
     }

@@ -12,6 +12,7 @@ class ArticleController extends Controller
     // Liste publique des articles publiés
     public function index()
     {
+        
 
         $articles = Article::paginate(6);
         return view('article.index', compact('articles'));
