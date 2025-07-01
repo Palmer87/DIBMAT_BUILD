@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -11,6 +12,7 @@ class ArticleController extends Controller
     // Liste publique des articles publiés
     public function index()
     {
+
         $articles = Article::paginate(6);
         return view('article.index', compact('articles'));
     }
