@@ -41,8 +41,8 @@
             </div>
         </div>
     </nav>
-    <x-notify::notify />
-    @notifyJs
+    {{-- <x-notify::notify />
+    @notifyJs --}}
 
     <!-- Contenu -->
     <main class="container py-5">

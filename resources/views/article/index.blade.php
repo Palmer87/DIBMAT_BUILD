@@ -3,22 +3,22 @@
 @section('title', 'Nos Articles')
 
 @section('content')
-<style>
-    .orange-btn {
-        background-color: #EC7100;
-        color: white;
-        border: none;
-    }
-    .orange-btn:hover {
-        background-color: #cf5d00;
-        color: white;
-    }
+    <style>
+        .orange-btn {
+            background-color: #EC7100;
+            color: white;
+            border: none;
+        }
+        .orange-btn:hover {
+            background-color: #cf5d00;
+            color: white;
+        }
 
-    .card-header-orange {
-        background-color: #EC7100;
-        color: white;
-    }
-</style>
+        .card-header-orange {
+            background-color: #EC7100;
+            color: white;
+        }
+    </style>
 
 <div class="container py-4">
     <h1 class="h4 mb-4 text-white bg-dark p-3 rounded">Nos Articles</h1>
