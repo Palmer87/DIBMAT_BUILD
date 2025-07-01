@@ -121,9 +121,7 @@
                                         {{ Str::limit($message->message, 60, '...') }}
                                     </div>
                                 </div>
-                                <a href="{{ route('messages.show', $message->id) }}" class="badge rounded-pill text-white text-decoration-none" style="background-color: #EC7100;">
-                                    Voir
-                                </a>
+
                             </li>
                         @endforeach
                     </ul>
