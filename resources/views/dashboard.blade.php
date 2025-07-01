@@ -25,7 +25,7 @@
     <div class="row g-4">
         <!-- Articles -->
         <div class="col-md-4">
-
+            <a href="{{ route('admin.articles.index') }}" class="text-decoration-none">
             <div class="card shadow-sm border-0 h-100 card-dark">
                 <div class="card-body text-center">
                     <i class="bi bi-journal-text dashboard-icon mb-3 text-warning"></i>
@@ -33,6 +33,7 @@
                     <p class="card-text">Articles</p>
                 </div>
             </div>
+            </a>
 
         </div>
 
@@ -120,7 +121,6 @@
                                         {{ Str::limit($message->message, 60, '...') }}
                                     </div>
                                 </div>
-
                             </li>
                         @endforeach
                     </ul>

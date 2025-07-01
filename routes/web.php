@@ -48,7 +48,7 @@ Route::get('/projets/{slug}', [ProjetController::class,'showpublic'])->name('pub
 
 // Routes back-office (protégées par auth)
 Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('articles', ArticleController::class)->except(['index', 'show']);
     Route::resource('devis', DevisController::class)->only(['index', 'destroy']);
     Route::get('devis/{slug}', [DevisController::class, 'show'])->name('devis.show');
