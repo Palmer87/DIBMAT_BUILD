@@ -6866,6 +6866,18 @@ THEMEFOREST REQUIRED CLASSES
   float: left;
 }
 
+.img-actu{
+  width: 100%;
+  height: 250px;
+}
+
+.img-actu img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
 @media (max-width: 1024px) {
   .recent-posts-entry .wt-post-media {
     width: 60px;
@@ -8041,25 +8053,25 @@ button.scroltop span {
   }
 }
 
-.cons-contact-form .wt-title {
+.wt-title {
   margin-bottom: 30px;
 }
 
 
-.cons-contact-form .form-control {
+ .form-control {
   height: 52px;
   padding: 10px 20px;
   background-color: #fff;
-  border: 1px solid #efefef;
+  border: 1px solid #efefef !important;
   border-radius: 5px;
 }
 
-.cons-contact-form .form-control:focus {
+ .form-control:focus {
   box-shadow: none;
   background-color: #e7e7e7;
 }
 
-.cons-contact-form textarea.form-control {
+ textarea.form-control {
   padding-top: 15px;
   height: 100px;
   margin-bottom: 40px;
@@ -8247,6 +8259,9 @@ button.scroltop span {
   max-width: 500px;
   margin: 0px auto 50px;
 }
+
+
+
 
 @media (max-width: 991px) {
   .page-notfound .page-notfound-media {
@@ -10007,11 +10022,17 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 
 .service-box-style2 .service-media {
   padding: 20px 20px 0px 20px;
+  width: 100%;
+  height: 250px;
 }
 
 .service-box-style2 .service-media img {
   border-radius: 0px 0px 100px 0px;
-  
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+
 }
 
 .service-box-style2 .service-media-hvr {

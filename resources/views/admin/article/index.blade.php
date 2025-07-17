@@ -1,72 +1,76 @@
-@extends('base')
+@extends('layouts.backend.base')
 
-@section('title', 'Gestion des articles')
+@section('title', 'Nos Articles')
 
 @section('content')
-<style>
-    /* Couleur orange personnalisée */
-    .orange-theme th {
-        background-color: #EC7100 !important;
-        color: white !important;
-    }
+    <style>
+        .orange-btn {
+            background-color: #EC7100;
+            color: white;
+            border: none;
+        }
+        .orange-btn:hover {
+            background-color: #cf5d00;
+            color: white;
+        }
 
-    .btn-orange {
-        border: 1px solid #EC7100 !important;
-        color: #EC7100 !important;
-        background-color: transparent;
-    }
-
-    .btn-orange:hover {
-        background-color: #EC7100 !important;
-        color: white !important;
-    }
-</style>
+        .card-header-orange {
+            background-color: #EC7100;
+            color: white;
+        }
+    </style>
 
 <div class="container py-4">
-    <h1 class="h4 mb-4 text-dark">Gestion des articles</h1>
+    <h1 class="h4 mb-4 text-white bg-dark p-3 rounded">Nos Articles</h1>
 
-    <a href="{{ route('articles.create') }}" class="btn btn-orange mb-3">
-        <i class="bi bi-plus-lg"></i> Créer un article
-    </a>
-
-  <div class="container py-4">
-    <h1 class="h4 mb-4 text-white bg-dark p-3 rounded">Gestion des devis</h1>
+    <div class="mb-4 text-end">
+        <a href="{{ route('articles.create') }}" class="btn btn-orange">
+            <i class="bi bi-plus-circle"></i> Nouvel Articles
+        </a>
+    </div>
 
     <div class="table-responsive">
-        <table class="table table-dark table-hover table-bordered align-middle rounded overflow-hidden">
-            <thead class="orange-theme">
+        <table class="table table-bordered table-hover bg-white rounded">
+            <thead class="table-dark">
                 <tr>
+                    <th>Image</th>
                     <th>Titre</th>
-                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Date de creation</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse($articles as $article)
+                @foreach($articles as $article)
                     <tr>
+                        <td><img src="{{ url($article->image) }}" alt="" width="50" height="50"></td>
                         <td>{{ $article->titre }}</td>
-                        <td>{{ $article->created_at->format('d/m/Y à H:i') }}</td>
+                        <td>{!! Str::limit(strip_tags( $article->contenu), 150) !!}</td>
+                        <td>{{ $article->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <a href="{{ route('articles.edit', $article) }}" class="btn btn-sm btn-outline-primary me-2">
-                                <i class="bi bi-pencil-square"></i> Modifier
+                            <a href="{{ route('articles.show', $article->id) }}" class="btn btn-sm btn-outline-primary me-1">
+                                <i class="bi bi-eye"></i> Voir
                             </a>
-                            <form action="{{ route('articles.destroy', $article) }}" method="POST" class="d-inline">
+
+                            <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-sm btn-outline-success me-1">
+                                <i class="bi bi-pen"></i> Editer
+                            </a>
+
+                            <form action="{{ route('articles.destroy', $article->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-outline-danger"
-                                    onclick="return confirm('Supprimer cet article ?')">
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Supprimer cet article ?')">
                                     <i class="bi bi-trash"></i> Supprimer
                                 </button>
                             </form>
                         </td>
                     </tr>
-                @empty
-                    <tr>
-                        <td colspan="3" class="text-center text-white">Aucun article</td>
-                    </tr>
-                @endforelse
+                @endforeach
+                
             </tbody>
         </table>
+    </div>
+
     </div>
 </div>
 @endsection

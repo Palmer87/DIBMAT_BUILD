@@ -24,29 +24,26 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'accueil'])->name('home.accueil');
 Route::get('/notre-histoire', [HomeController::class, 'histoire'])->name('home.histoire');
 Route::get('/notre-expertise', [HomeController::class, 'expertise'])->name('home.expertise');
+Route::get('construction-metallique', [HomeController::class, 'service_construction'])->name('home.service_construction');
+Route::get('/batiment', [HomeController::class, 'batiment'])->name('home.batiment');
+Route::get('/travaux-climatisation', [HomeController::class, 'climatisation'])->name('home.climatisation');
+Route::get('/travaux-electricite-energie', [HomeController::class, 'electricite_energie'])->name('home.electricite');
 Route::get('/projets-realises', [HomeController::class, 'projets'])->name('home.projets');
+Route::get('/projets-realises/{slug}', [HomeController::class, 'projets_detail'])->name('projets.detail');
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::post('/contact', [HomeController::class, 'contact_store'])->name('contact.store');
 Route::get('/actualites', [HomeController::class, 'actualites'])->name('home.actualites');
+Route::get('/actualites/{slug}', [HomeController::class, 'actualites_show'])->name('actualites.show');
 Route::get('/devis', [HomeController::class, 'devis'])->name('home.devis');
-
-
-Route::get('/test-404', function () {
-    return 'Route fonctionne !';
-});
+Route::post('/devis', [HomeController::class, 'devis_store'])->name('devis.store');
 
 
 
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-
-// });
 
 
-Route::get('/dashboard/{slug}', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 
 
 
@@ -71,16 +68,31 @@ Route::middleware('auth')->group(function () {
 
 // Routes back-office (protégées par auth)
 Route::middleware(['auth'])->prefix('admin')->group(function () {
-    // Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
-    // Route::resource('articles', ArticleController::class)->except(['index', 'show']);
-    // Route::resource('devis', DevisController::class)->only(['index', 'destroy']);
-    // Route::get('devis/{slug}', [DevisController::class, 'show'])->name('devis.show');
-    // Route ::resource('projets', ProjetController::class);
-    // Route::resource('messages', MessageController::class)->only(['index', 'destroy',  'repondre','reponse']);
-    // Route::get('messages/{slug}', [MessageController::class, 'show'])->name('messages.show');
-    // Route::post('messages/repondre/{message}',[MessageController::class,'repondre'])->name('messages.repondre');
-    // Route::get('messages/reponse/{message}',[MessageController::class,'reponse'])->name('messages.reponse');
-    // Route::get('articles', [ArticleController::class, 'adminIndex'])->name('admin.articles.index');
+
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    
+    Route ::resource('projets', ProjetController::class);
+    
+
+    //--------------- Message ------------//
+    Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/{id}', [MessageController::class, 'show'])->name('messages.show');
+    Route::delete('/messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
+
+    //--------------- Devis ------------//
+    Route::resource('devis', DevisController::class)->only(['index', 'destroy']);
+    Route::get('devis/{slug}', [DevisController::class, 'show'])->name('devis.show');
+
+    
+    //--------------- Article ------------//
+    Route::resource('articles', ArticleController::class);
+
+
+    Route::get('/liste-user', [DashboardController::class, 'liste_user'])->name('user.liste');
+    Route::delete('/delete-user/{user}', [DashboardController::class, 'destroy'])->name('user.destroy');
+
+
+    
 });
 
 require __DIR__.'/auth.php';

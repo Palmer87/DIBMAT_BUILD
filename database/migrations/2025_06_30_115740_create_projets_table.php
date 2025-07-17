@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('categorie')->nullable();
-            $table->string('description');
+            $table->string('slug');
             $table->string('client');
-            $table->string('lieu')->nullable();
-            $table->string('image')->nullable();
-            $table->date('date')->nullable();
+            $table->string('lieu');
+            $table->string('categorie');
+            $table->date('date');
+            $table->text('description');
+            $table->string('image'); // image principale
+            $table->json('imagecliche')->nullable(); // clichés multiples
             $table->timestamps();
         });
     }

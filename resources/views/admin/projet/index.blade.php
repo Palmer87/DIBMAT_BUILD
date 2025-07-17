@@ -1,4 +1,5 @@
-@extends('base')
+@extends('layouts.backend.base')
+
 @section('title', 'Projets')
 
 @section('content')
@@ -54,7 +55,7 @@
                             <td>{{ $projet->slug }}</td>
                             <td>{{ $projet->date }}</td>
                             <td>
-                                <img src="{{ asset('storage/'.$projet->image) }}" alt="Image du projet" class="img-thumbnail" style="max-width: 100px;">
+                                <img src="{{ url($projet->image) }}" alt="Image du projet" class="img-thumbnail" style="max-width: 100px;">
                             </td>
                             <td class="text-center">
                                 <a href="{{ route('projets.show', $projet->id) }}" class="btn btn-sm btn-outline-dark me-1">

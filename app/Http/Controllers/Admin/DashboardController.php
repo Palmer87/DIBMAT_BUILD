@@ -7,6 +7,7 @@ use App\Models\Devis;
 use App\Models\Article;
 use App\Models\Message;
 use App\Models\Projet;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -23,5 +24,21 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('devis', 'nbDevis', 'messages', 'nbProjets', 'nbArticles', 'messagesDerniers', 'nbMessages'));
     }
+
+    public function liste_user()
+    {
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        // Rediriger vers la liste des produits avec un message de succès
+        return redirect()->route('user.liste')->with('success', 'Utilisateur supprimé avec succès');
+    }
+
+    
 
 }

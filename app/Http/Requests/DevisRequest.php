@@ -25,7 +25,7 @@ class DevisRequest extends FormRequest
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'numero' => 'nullable|numeric|max:30',
+            'numero' => 'required|string|max:15',
             'message' => 'required|string',
         ];
     }
@@ -42,11 +42,9 @@ class DevisRequest extends FormRequest
             'email.required' => 'L\'email est obligatoire.',
             'email.email' => 'L\'email doit être une adresse email valide.',
             'email.max' => 'L\'email ne peut pas dépasser 255 caractères.',
-            'numero.max' => 'Le numéro ne peut pas dépasser 30 caractères.',
+            'numero.max' => 'Le numéro ne peut pas dépasser 15 caractères.',
             'message.required' => 'Le message est obligatoire.',
             'message.string' => 'Le message doit être une chaîne de caractères.',
-            'message.max' => 'Le message ne peut pas dépasser 1000 caractères.',
-
 
         ];
     }

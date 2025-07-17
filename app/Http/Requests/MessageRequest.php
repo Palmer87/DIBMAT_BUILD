@@ -23,7 +23,9 @@ class MessageRequest extends FormRequest
     {
         return [
             'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'telephone' => 'required|string|max:15',
             'message' => 'required|string',
         ];
     }
@@ -35,13 +37,13 @@ class MessageRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'nom.required' => 'Le nom est obligatoire.',
-            'email.required' => 'L\'email est obligatoire.',
-            'email.email' => 'L\'email doit être une adresse email valide.',
-            'email.max' => 'L\'email ne peut pas dépasser 255 caractères.',
-            'message.required' => 'Le message est obligatoire.',
-            'message.string' => 'Le message doit être une chaîne de caractères.',
-            'message.max' => 'Le message ne peut pas dépasser 1000 caractères.',
+            'nom.required' => 'Le champ nom est obligatoire.',
+            'prenom.required' => 'Le champ prénom est obligatoire.',
+            'email.required' => 'Le champ email est obligatoire.',
+            'email.email' => 'Veuillez entrer une adresse email valide.',
+            'telephone.required' => 'Le champ numéro de téléphone est obligatoire.',
+            'message.required' => 'Le champ message est obligatoire.',
+            
         ];
     }
 }

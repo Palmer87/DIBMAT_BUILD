@@ -1,10 +1,16 @@
 @extends('layouts.frontend.base')
 
+@section('title', 'Notre histoire — Dibmat & Build, bâtir avec passion')
+@section('meta_description', 'Découvrez l’histoire de Dibmat & Build, entreprise familiale de construction et rénovation en Côte d\'Ivoire. Notre passion, nos valeurs et notre engagement.')
+@section('meta_keywords', 'histoire Dibmat, valeurs entreprise, construction Côte d\'Ivoire, bâtiment Abidjan, Dibmat & Build')
+@section('meta-image', asset('assets/front/images/main-slider/slider2/image3.png'))
+
+
 @section('content')
 
 <div class="page-content">
     <!-- INNER PAGE BANNER -->
-    <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(images/main-slider/slider2/image3.png);">
+    <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url({{ url('assets/front/images/main-slider/slider2/image3.png') }});">
         <div class="overlay-main site-bg-black opacity-07"></div>
             <div class="container">
                 <div class="wt-bnr-inr-entry">
@@ -56,15 +62,8 @@
                                     
 
                                     <div class="about-one">
-                                        <p>DIBMAT&BUILD est une entreprise de construction,
-                                            de génie électrique, d’énergie, de climatisation et de prestations
-                                            diverses. Grâce à son sérieux et à son savoir-faire professionnel
-                                            depuis sa création, elle va très tôt bénéficier de la
-                                            confiance de clients privés et publics.
-                                            
-                                            S’appuyant sur une équipe d’ingénieurs, de techniciens et
-                                            d’ouvriers qualifiés et expérimentés ainsi qu’un management
-                                            de qualité des projets qui lui sont confiés.
+                                        <p>
+                                            DIBMAT & BUILD est une entreprise spécialisée dans la construction, le génie électrique, les solutions énergétiques, le froid, ainsi que dans diverses prestations techniques. Depuis notre création, nous nous sommes imposé comme un acteur de confiance auprès de nos clients privés et publics, grâce à notre sérieux, notre professionnalisme et notre engagement de qualité. Notre force repose sur une équipe pluridisciplinaire composée d’ingénieurs, de techniciens et d’ouvriers qualifiés, tous animés par le souci du travail bien fait. Chaque projet est encadré par un management rigoureux, garantissant le respect des délais, des normes de sécurité, et des exigences spécifiques de nos clients.
                                         </p>
                                         <p class="text-uppercase mt-5 site-text-primary">
                                             <strong style="color: #f57c00;">CE QUI NOUS DIFFERENCIE DES AUTRES</strong>
@@ -97,16 +96,14 @@
                                                         
                                     </div>
 
-                                    <p class="mt-4">Professionnalisme, rigueur et sérieux dans le travail mais aussi 
-                                        et surtout le respect des engagements contractuels (qualité, coûts et délais), 
-                                        constituent le leitmotiv de notre entreprise.</p>                                       
+                                    <p class="mt-4">Le professionnalisme, la rigueur et le sérieux dans l’exécution des travaux sont les fondements de notre démarche. Mais plus encore, le respect strict des engagements contractuels – en termes de qualité, de coûts et de délais – constitue le leitmotiv qui guide chacune de nos interventions.</p>                                       
 
                                     <p class="text-uppercase mt-5 site-text-primary">
                                         <strong style="color: #f57c00;">DECOUVREZ NOTRE VISION</strong>
                                     </p> 
 
                                     <p>
-                                        DIBMAT&BUILD a développé une plateforme de services et de conseil à 
+                                        DIBMAT & BUILD a développé une plateforme de services et de conseil à 
                                         destination de ses clients pour leurs offrir des solutions innovantes 
                                         et durables et assurer un meilleur cadre de vie, plus sécuritaire et plus sain.
                                     </p>
@@ -118,13 +115,15 @@
                             <div class="col-lg-6 col-md-12 m-b30 about-max-two-position">
                                 <div class="about-max-two">
                                     <div class="about-max-two-media">
-                                        <img src="images/travaux_3.jpg" alt="">
+                                        <img src="{{ url('assets/front/images/travaux_3.jpg') }}" alt="">
                                     </div>
-                                    <!-- <div class="about-max-to-media">
-                                        <img src="images/travaux_3.jpg" alt="">
-                                    </div> -->
+                                   
                                     <div class="about-max-two-video">
-                                        <p class="ripple center site-text-white">+3 <br> ANS D'EXPERIENCES</p>
+                                        @php
+                                            $startYear = 2020;
+                                            $experienceYears = now()->year - $startYear;
+                                        @endphp
+                                        <p class="ripple center site-text-white">+{{ $experienceYears }} <br> ANS D'EXPERIENCES</p>
                                     </div>
                                 </div>
                             </div> 
@@ -265,7 +264,6 @@
                                         <h4 class="wt-title">
                                             INNOVATION
                                         </h4>
-                                        <!-- <p>Lorem ipsum dolor sit and amet, adipisicing elit, sed do eiusmod tempor. happy with our services</p> -->
                                         
                                     </div>
                                     
@@ -365,7 +363,7 @@
                                             INNOVATION
                                         </h4>
                                     </div>
-                                    <!-- <div class="flip-overlay"></div> -->
+                                    
                                 </div>
                             </div>
                         </div> 
@@ -385,7 +383,7 @@
                                         <h4 class="wt-title">
                                             QUALITE
                                         </h4>
-                                        <!-- <p>Lorem ipsum dolor sit and amet, adipisicing elit, sed do eiusmod tempor. happy with our services</p> -->
+                                        
                                         
                                     </div>
                                     
@@ -403,7 +401,6 @@
                                             QUALITE
                                         </h4>                                        
                                     </div>
-                                    <!-- <div class="flip-overlay"></div> -->
                                 </div>
                             </div>
                         </div>
@@ -423,7 +420,6 @@
                                         <h4 class="wt-title text-uppercase">
                                             DURABILITE
                                         </h4>
-                                        <!-- <p>Lorem ipsum dolor sit and amet, adipisicing elit, sed do eiusmod tempor. happy with our services</p> -->
                                         
                                     </div>
                                     
@@ -441,7 +437,7 @@
                                             DURABILITE
                                         </h4>                                        
                                     </div>
-                                    <!-- <div class="flip-overlay"></div> -->
+                                    
                                 </div>
                             </div>
                         </div>
@@ -458,8 +454,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <h4 class="wt-title text-uppercase"><a href="service-detail.html">INTEGRITE</a></h4>
-                                        <!-- <p>Lorem ipsum dolor sit and amet, adipisicing elit, sed do eiusmod tempor. happy with our services</p> -->
+                                        <h4 class="wt-title text-uppercase">INTEGRITE</h4>
                                         
                                     </div>
                                     
@@ -473,8 +468,8 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <h4 class="wt-title text-uppercase"><a href="service-detail.html">INTEGRITE</a></h4>
-                                        <!-- <p>Lorem ipsum dolor sit and amet, adipisicing elit, sed do eiusmod tempor. happy with our services</p> -->
+                                        <h4 class="wt-title text-uppercase">INTEGRITE</h4>
+                                       
                                     </div>
                                     <!-- <div class="flip-overlay"></div> -->
                                 </div>
@@ -516,7 +511,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                 </div>                                   
 
                                 <div class="wt-info">
@@ -525,12 +520,7 @@
                                         
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                            
                                         </div> 
                                     </div>
                                 </div>
@@ -542,7 +532,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                 </div>                                   
 
                                 <div class="wt-info">
@@ -550,12 +540,7 @@
                                         <h4 class="m-t0 m-b10">Ashley Sanchez</h4>
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                            
                                         </div> 
                                     </div>
                                 </div>
@@ -567,7 +552,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                 </div>                                   
 
                                 <div class="wt-info">
@@ -575,12 +560,7 @@
                                         <h4 class="m-t0 m-b10">Juliana Bryant</h4>
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                            
                                         </div> 
                                     </div>
                                 </div>
@@ -593,7 +573,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                         
                                 </div>                                   
 
@@ -603,12 +583,7 @@
                                         <!-- <p>Contractor</p> -->
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                            
                                         </div> 
                                     </div>
                                 </div>
@@ -629,7 +604,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                 </div>                                   
 
                                 <div class="wt-info">
@@ -638,12 +613,7 @@
                                         
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                            
                                         </div> 
                                     </div>
                                 </div>
@@ -655,7 +625,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                 </div>                                   
 
                                 <div class="wt-info">
@@ -663,12 +633,7 @@
                                         <h4 class="m-t0 m-b10">Ashley Sanchez</h4>
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                           
                                         </div> 
                                     </div>
                                 </div>
@@ -680,7 +645,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                 </div>                                   
 
                                 <div class="wt-info">
@@ -688,12 +653,7 @@
                                         <h4 class="m-t0 m-b10">Juliana Bryant</h4>
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                           
                                         </div> 
                                     </div>
                                 </div>
@@ -706,7 +666,7 @@
                             <div class="wt-team-2">
                                         
                                 <div class="wt-media">
-                                    <img src="images/team/team1.jpg" alt="">
+                                    <img src="{{ url('assets/front/images/team/team1.jpg') }}" alt="">
                                         
                                 </div>                                   
 
@@ -716,12 +676,7 @@
                                         <!-- <p>Contractor</p> -->
                                         <div class="team-social-center">
                                             <p class="text-uppercase" style="font-weight: bold;">Conseillère technique</p>
-                                            <!-- <ul class="team-social-icon">
-                                                <li><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-                                                <li><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
-                                            </ul> -->
+                                            
                                         </div> 
                                     </div>
                                 </div>

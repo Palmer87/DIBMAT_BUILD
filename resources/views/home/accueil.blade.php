@@ -1,547 +1,186 @@
 @extends('layouts.frontend.base')
 
+@section('title', 'Dibmat & Build — Expert en construction et rénovation en Côte d\'Ivoire')
+@section('meta_description', 'Dibmat & Build vous accompagne dans vos projets de construction, rénovation et aménagement. Qualité, expertise et respect des délais.')
+@section('meta_keywords', 'construction Côte d\'Ivoire, rénovation Abidjan, entreprise bâtiment, aménagement intérieur, Dibmat & Build')
+@section('meta-image', asset('assets/front/images/main-slider/slider2/image1.png'))
+
+
 @section('content')
 
 <div class="page-content">
 
     <!-- SLIDER START --> 
-    <div id="welcome_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="typewriter-effect" data-source="gallery">
-        <div id="welcome_two" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">                
-            <ul>    
-                <!-- SLIDE 1 -->
-                <li data-index="rs-901" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ url('assets/front/images/main-slider/slider2/image1.png') }}"  data-rotate="0"  data-saveperformance="off" data-title="Slide" data-param1="" data-description="">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ url('assets/front/images/main-slider/slider2/image1.png ' )}}"  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina/>
-                    <!-- LAYERS -->
-                    <!-- LAYER NR. 1 [ for overlay ] -->
-                    <div class="tp-caption tp-shape tp-shapewrapper " id="slide-901-layer-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape" data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[ {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"} ]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 1;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
-                    </div>
-                            
-                    <!-- LAYER NR. 2 [ Small Title ] -->
-                    <div class="tp-caption   tp-resizeme site-text-primary" id="slide-901-layer-2" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']" data-fontsize="['20','20','20','20']" data-lineheight="['20','20','20','20']" data-width="['700','700','700','400']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" 
-                                data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                            
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 700;
-                                font-family: 'Montserrat', sans-serif;">
-                                <!-- <span style="background-color: #fff; display: inline-block;padding: 5px 10px;">We Make Sure</span> -->
-                            </div> 
-                                                            
-                                <!-- LAYER NR. 3 [ Large Title ] -->
-                                <div class="tp-caption   tp-resizeme" 
-                                id="slide-901-layer-3" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']"  
-                                data-fontsize="['48','48','36','24']"
-                                data-lineheight="['64','64','64','64']"
-                                data-width="['900','900','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on" 
-                                data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
-                                
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[5,5,5,5]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[100,100,100,100]"
-                                data-paddingleft="[30,30,30,30]"
-                            
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 900;
-                                color:#fff;
-                                border-width:0px; font-family: 'Montserrat', sans-serif;">BÂTIR AVEC EXCELLENCE,INNOVER POUR DEMAIN.</div>
-                            
-                                <!-- LAYER NR. 4 [ for paragraph] -->
-                                <div class="tp-caption  tp-resizeme" 
-                                id="slide-901-layer-4" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['80','80','50','20']"  
-                                data-fontsize="['18','20','20','14']"
-                                data-lineheight="['30','30','30','22']"
-                                data-width="['600','600','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                            
-                                style="z-index: 13; 
-                                font-weight: 500; 
-                                color:#fff;
-                                border-width:0px;font-family: 'Montserrat', sans-serif;">
-                                DIBMAT & BUILD vous accompagne dans la réalisation de vos projets de construction, 
-                                rénovation et aménagement avec des solutions adaptées à vos besoins, dans le respect 
-                                des délais et de la qualité. 
-                                </div>
-                            
-                                <!-- LAYER NR. 5 [ for see all service botton ] -->
-                                <div class="tp-caption tp-resizeme" 	
-                                id="slide-901-layer-5"						
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['180','180','150','100']" 
-                                data-lineheight="['none','none','none','none']"
-                                data-width="['200','200','200','200']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                                
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[ 
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                                
-                                style="z-index:13; text-transform:uppercase;">
-                                <a href="project-1.html" class="site-button btn-hover-animation">DECOUVREZ NOS PROJETS</a>
-                                </div>
-
-                                    <!-- LAYER NR. 6 large number -->
-                                <div class="tp-caption tp-resizeme" 	
-                                id="slide-901-layer-6"						
-                                data-x="['right','right','right','center']" data-hoffset="['40','40','40','0']" 
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','100']" 
-                                data-fontsize="['400','400','200','100']"
-                                data-lineheight="['400','400','200','100']"                             
-                                data-width="['800','800','800','800']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                                
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[ 
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['right','right','right','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                
-                            style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 900;
-                                color:rgba(0,0,0,0);">
-                                <!-- <span class="slider-text-outline" style="font-family: 'Montserrat', sans-serif;text-transform:uppercase;">01</span> -->
-                                </div>  
-                                                        
-
-                            </li>
-
-                            <!-- SLIDE 2 -->
-                            <li data-index="rs-902"
-                            data-transition="slidingoverlayhorizontal" 
-                            data-slotamount="default" 
-                            data-hideafterloop="0" 
-                            data-hideslideonmobile="off"  
-                            data-easein="default" 
-                            data-easeout="default" 
-                            data-masterspeed="default"  
-                            data-thumb="{{ url('assets/front/images/main-slider/slider2/image2.png')}}"  
-                            data-rotate="0"  
-                            data-saveperformance="off"  
-                            data-title="Slide" data-param1="" 
-                            data-description="">
-                                <!-- MAIN IMAGE -->
-                                <img src="{{ url('assets/front/images/main-slider/slider2/image2.png')}}"  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina/>
-                                <!-- LAYERS -->
-                            
-                                <!-- LAYER NR. 1 [ for overlay ] -->
-                                <div class="tp-caption tp-shape tp-shapewrapper " 
-                                id="slide-902-layer-0" 
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-                                data-width="full"
-                                data-height="full"
-                                data-whitespace="nowrap"
-                                data-type="shape" 
-                                data-basealign="slide" 
-                                data-responsive_offset="off" 
-                                data-responsive="off"
-                                data-frames='[
-                                {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}
-                                ]'
-                                data-textAlign="['left','left','left','left']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                
-                                style="z-index: 1;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
-                                </div>
-                            
-                                <!-- LAYER NR. 2 [ Small Title ] -->
-                                <div class="tp-caption   tp-resizeme site-text-primary" 
-                                id="slide-902-layer-2" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']"    
-                                data-fontsize="['20','20','20','20']"
-                                data-lineheight="['20','20','20','20']"
-                                data-width="['700','700','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on" 
-                                data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                            
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 700;
-                                font-family: 'Montserrat', sans-serif;">
-                                <!-- <span style="background-color: #fff; display: inline-block;padding: 5px 10px;">We Make Sure</span> -->
-                            </div>
-                                                            
-                                <!-- LAYER NR. 3 [ Large Title ] -->
-                                <div class="tp-caption   tp-resizeme" 
-                                id="slide-902-layer-3" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']"  
-                                data-fontsize="['48','48','36','24']"
-                                data-lineheight="['64','64','36','24']"
-                                data-width="['900','900','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on" 
-                                data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
-                                
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[5,5,5,5]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[100,100,100,100]"
-                                data-paddingleft="[30,30,30,30]"
-                            
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 900;
-                                color:#fff;
-                                border-width:0px; font-family: 'Montserrat', sans-serif;">BÂTIR AVEC EXCELLENCE,INNOVER POUR DEMAIN.</div>
-                            
-                                <!-- LAYER NR. 4 [ for paragraph] -->
-                                <div class="tp-caption  tp-resizeme" 
-                                id="slide-902-layer-4" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['80','80','50','20']" 
-                                data-fontsize="['18','18','20','14']"
-                                data-lineheight="['30','30','30','22']"
-                                data-width="['600','600','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                            
-                                style="z-index: 13; 
-                                font-weight: 500; 
-                                color:#fff;
-                                border-width:0px;font-family: 'Montserrat', sans-serif;">
-                                    DIBMAT & BUILD vous accompagne dans la réalisation de vos projets de construction, 
-                                    rénovation et aménagement avec des solutions adaptées à vos besoins, dans le respect 
-                                    des délais et de la qualité.                            
-                                    </div>
-                            
-                                <!-- LAYER NR. 5 [ for see all service botton ] -->
-                                <div class="tp-caption tp-resizeme" 	
-                                id="slide-902-layer-5"						
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['180','180','150','100']" 
-                                data-lineheight="['none','none','none','none']"
-                                data-width="['200','200','200','200']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                                
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[ 
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                                
-                                style="z-index:13; text-transform:uppercase;">
-                                <a href="project-1.html" class="site-button btn-hover-animation">DECOUVREZ NOS PROJETS</a>
-                                </div>
-
-                                    <!-- LAYER NR. 6 large number -->
-                                <div class="tp-caption tp-resizeme" 	
-                                id="slide-902-layer-6"						
-                                data-x="['right','right','right','center']" data-hoffset="['40','40','40','0']" 
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','100']" 
-                                data-fontsize="['400','400','200','100']"
-                                data-lineheight="['400','400','200','100']"                               
-                                data-width="['800','800','800','800']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                                
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[ 
-                                    {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},
-                                    {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                    ]'
-                                data-textAlign="['right','right','right','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                    
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 900;
-                                color:rgba(0,0,0,0);">
-                                <!-- <span class="slider-text-outline" style="font-family: 'Montserrat', sans-serif;text-transform:uppercase;">02</span> -->
-                                </div>  
-
-                                                        
-                            </li>                                
+              
+            <div id="welcome_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="typewriter-effect" data-source="gallery">
+                <div id="welcome_two" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">                
+                    <ul>
+                
+                        <!-- SLIDE 1 -->
+                        <li data-index="rs-901" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ url('assets/front/images/main-slider/slider2/image1.png' )}}"  data-rotate="0" data-saveperformance="off"  data-title="Slide" data-param1="" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('assets/front/images/main-slider/slider2/image1.png' )}}"  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina/>
+                            <!-- LAYERS -->
                         
-                            <!-- SLIDE 3 -->
-                            <li data-index="rs-903"
-                            data-transition="slidingoverlayhorizontal" 
-                            data-slotamount="default" 
-                            data-hideafterloop="0" 
-                            data-hideslideonmobile="off"  
-                            data-easein="default" 
-                            data-easeout="default" 
-                            data-masterspeed="default"  
-                            data-thumb="{{ url('assets/front/images/main-slider/slider2/image3.png')}}"  
-                            data-rotate="0"  
-                            data-saveperformance="off"  
-                            data-title="Slide" data-param1="" 
-                            data-description="">
-                                <!-- MAIN IMAGE -->
-                                <img src="{{ url('assets/front/images/main-slider/slider2/image3.png')}}"  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina/>
-                                <!-- LAYERS -->
-                            
-                                <!-- LAYER NR. 1 [ for overlay ] -->
-                                <div class="tp-caption tp-shape tp-shapewrapper " 
-                                id="slide-902-layer-0" 
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-                                data-width="full"
-                                data-height="full"
-                                data-whitespace="nowrap"
-                                data-type="shape" 
-                                data-basealign="slide" 
-                                data-responsive_offset="off" 
-                                data-responsive="off"
-                                data-frames='[
-                                {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}
-                                ]'
-                                data-textAlign="['left','left','left','left']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                                
-                                style="z-index: 1;border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
-                                </div>
-                            
-                                <!-- LAYER NR. 2 [ Small Title ] -->
-                                <div class="tp-caption   tp-resizeme site-text-primary" 
-                                id="slide-902-layer-2" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']"    
-                                data-fontsize="['20','20','20','20']"
-                                data-lineheight="['20','20','20','20']"
-                                data-width="['700','700','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on" 
-                                data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                            
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 700;
-                                font-family: 'Montserrat', sans-serif;">
-                                <!-- <span style="background-color: #fff; display: inline-block;padding: 5px 10px;">We Make Sure</span> -->
+                            <!-- LAYER NR. 1 [ for overlay ] -->
+                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-901-layer-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape" data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[ {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 1;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
                             </div>
-                                                            
-                                <!-- LAYER NR. 3 [ Large Title ] -->
-                                <div class="tp-caption   tp-resizeme" 
-                                id="slide-902-layer-3" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']"  
-                                data-fontsize="['48','48','36','24']"
-                                data-lineheight="['64','64','36','24']"
-                                data-width="['900','900','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on" 
-                                data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
-                                
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[5,5,5,5]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[100,100,100,100]"
-                                data-paddingleft="[30,30,30,30]"
-                            
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 900;
-                                color:#fff;
-                                border-width:0px; font-family: 'Montserrat', sans-serif;">BÂTIR AVEC EXCELLENCE,INNOVER POUR DEMAIN.</div>
-                            
-                                <!-- LAYER NR. 4 [ for paragraph] -->
-                                <div class="tp-caption  tp-resizeme" 
-                                id="slide-902-layer-4" 
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['80','80','50','20']" 
-                                data-fontsize="['18','18','20','14']"
-                                data-lineheight="['30','30','30','22']"
-                                data-width="['600','600','700','400']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                            
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                            
-                                style="z-index: 13; 
-                                font-weight: 500; 
-                                color:#fff;
-                                border-width:0px;font-family: 'Montserrat', sans-serif;">
-                            DIBMAT & BUILD vous accompagne dans la réalisation de vos projets de construction, 
-                            rénovation et aménagement avec des solutions adaptées à vos besoins, dans le respect 
-                            des délais et de la qualité.
-                                </div>
-                            
-                                <!-- LAYER NR. 5 [ for see all service botton ] -->
-                                <div class="tp-caption tp-resizeme" 	
-                                id="slide-902-layer-5"						
-                                data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
-                                data-y="['middle','middle','middle','middle']" data-voffset="['180','180','150','100']" 
-                                data-lineheight="['none','none','none','none']"
-                                data-width="['200','200','200','200']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                                
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[ 
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-                                data-textAlign="['left','left','left','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[30,30,30,30]"
-                                
-                                style="z-index:13; text-transform:uppercase; white-space: nowrap;">
-                                <a href="project-1.html" class="site-button btn-hover-animation">DECOUVREZ NOS PROJETS</a>
-                                </div>
-
-                                    <!-- LAYER NR. 6 large number -->
-                                <div class="tp-caption tp-resizeme" 	
-                                id="slide-902-layer-6"						
-                                data-x="['right','right','right','center']" data-hoffset="['40','40','40','0']" 
-                                data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','100']" 
-                                data-fontsize="['400','400','200','100']"
-                                data-lineheight="['400','400','200','100']"                               
-                                data-width="['800','800','800','800']"
-                                data-height="['none','none','none','none']"
-                                data-whitespace="['normal','normal','normal','normal']"
-                                
-                                data-type="text" 
-                                data-responsive_offset="on"
-                                data-frames='[ 
-                                    {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},
-                                    {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                    ]'
-                                data-textAlign="['right','right','right','center']"
-                                data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]"
-                                data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]"
-                                    
-                                style="z-index: 13; 
-                                white-space: normal; 
-                                font-weight: 900;
-                                color:rgba(0,0,0,0);">
-                                <!-- <span class="slider-text-outline" style="font-family: 'Montserrat', sans-serif;text-transform:uppercase;">02</span> -->
-                                </div>  
-
+                        
+                            <!-- LAYER NR. 2 [ Small Title ] -->
+                            <div class="tp-caption   tp-resizeme site-text-primary" id="slide-901-layer-2" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']" data-fontsize="['20','20','20','20']" data-lineheight="['20','20','20','20']" data-width="['700','700','700','400']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[{"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13; white-space: normal; font-weight: 700; font-family: 'Montserrat', sans-serif;">
+                            </div> 
                                                         
-                            </li>  
+                            <!-- LAYER NR. 3 [ Large Title ] -->
+                            <div class="tp-caption   tp-resizeme" id="slide-901-layer-3" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']"  data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']"   data-fontsize="['48','48','36','24']"  data-lineheight="['64','64','64','64']"  data-width="['900','900','700','400']"  data-height="['none','none','none','none']"  data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','center']" data-paddingtop="[5,5,5,5]" data-paddingright="[0,0,0,0]" data-paddingbottom="[100,100,100,100]" data-paddingleft="[30,30,30,30]" style="z-index: 13; white-space: normal; font-weight: 900; color:#fff; border-width:0px; font-family: 'Montserrat', sans-serif;">BÂTIR AVEC EXCELLENCE, INNOVER POUR DEMAIN.</div>
+                        
+                            <!-- LAYER NR. 4 [ for paragraph] -->
+                            <div class="tp-caption  tp-resizeme" id="slide-901-layer-4" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['80','80','50','20']" data-fontsize="['18','20','20','14']" data-lineheight="['30','30','30','22']" data-width="['800','800','900','600']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]' data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index: 13; font-weight: 500; color:#fff; border-width:0px;font-family: 'Montserrat', sans-serif;"> Chez DIBMAT & BUILD, nous sommes spécialisés dans la construction métallique sur mesure.  Grâce à notre savoir-faire et à l'utilisation de matériaux de qualité, nous concevons des structures solides, esthétiques et durables. Qu’il s’agisse d’un hangar, d’un entrepôt ou d’un bâtiment industriel, nous vous accompagnons de la conception à la réalisation, avec un souci constant de fiabilité et de précision.
+                            </div>
+                        
+                            <!-- LAYER NR. 5 [ for see all service botton ] -->
+                            <div class="tp-caption tp-resizeme" id="slide-901-layer-5" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['180','180','150','100']"  data-lineheight="['none','none','none','none']"  data-width="['200','200','200','200']"  data-height="['none','none','none','none']"  data-whitespace="['normal','normal','normal','normal']"  data-type="text" data-responsive_offset="on"  data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},  {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]' data-textAlign="['left','left','left','center']"  data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index:13; text-transform:uppercase;">
+                                <a href="{{ route('home.projets') }}" class="site-button btn-hover-animation">DECOUVREZ NOS PROJETS</a>
+                            </div>
+
+                                <!-- LAYER NR. 6 large number -->
+                            <div class="tp-caption tp-resizeme" id="slide-901-layer-6"  data-x="['right','right','right','center']" data-hoffset="['40','40','40','0']"  data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','100']"  data-fontsize="['400','400','200','100']" data-lineheight="['400','400','200','100']"  data-width="['800','800','800','800']"  data-height="['none','none','none','none']"  data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['right','right','right','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13; white-space: normal; font-weight: 900; color:rgba(0,0,0,0);">
+                            <!-- <span class="slider-text-outline" style="font-family: 'Montserrat', sans-serif;text-transform:uppercase;">01</span> -->
+                            </div>  
+                                                    
+
+                        </li>
+
+                        <!-- SLIDE 2 -->
+                        <li data-index="rs-902" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{ url('assets/front/images/main-slider/slider2/image2.png' )}}" data-rotate="0"  data-saveperformance="off" data-title="Slide" data-param1="" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('assets/front/images/main-slider/slider2/image2.png' )}}"  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina/>
+                            <!-- LAYERS -->
+                        
+                            <!-- LAYER NR. 1 [ for overlay ] -->
+                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-902-layer-0"  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"  data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"   data-width="full" data-height="full"  data-whitespace="nowrap"  data-type="shape"  data-basealign="slide"  data-responsive_offset="off"  data-responsive="off" data-frames='[ {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"} ]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"data-paddingleft="[0,0,0,0]" style="z-index: 1;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
+                            </div>
+                        
+                            <!-- LAYER NR. 2 [ Small Title ] -->
+                            <div class="tp-caption   tp-resizeme site-text-primary" 
+                            id="slide-902-layer-2" 
+                            data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
+                            data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']"    
+                            data-fontsize="['20','20','20','20']"
+                            data-lineheight="['20','20','20','20']"
+                            data-width="['900','900','900','600']"
+                            data-height="['none','none','none','none']"
+                            data-whitespace="['normal','normal','normal','normal']"
+                        
+                            data-type="text" 
+                            data-responsive_offset="on" 
+                            data-frames='[
+                            {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},
+                            {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
+                            ]'
+                            data-textAlign="['left','left','left','center']"
+                            data-paddingtop="[0,0,0,0]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[0,0,0,0]"
+                            data-paddingleft="[0,0,0,0]"
+                        
+                            style="z-index: 13; 
+                            white-space: normal; 
+                            font-weight: 700;
+                            font-family: 'Montserrat', sans-serif;">
+                            <!-- <span style="background-color: #fff; display: inline-block;padding: 5px 10px;">We Make Sure</span> -->
+                        </div>
+                                                        
+                            <!-- LAYER NR. 3 [ Large Title ] -->
+                            <div class="tp-caption   tp-resizeme" 
+                            id="slide-902-layer-3" 
+                            data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" 
+                            data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']"  
+                            data-fontsize="['48','48','36','24']"
+                            data-lineheight="['64','64','36','24']"
+                            data-width="['900','900','700','400']"
+                            data-height="['none','none','none','none']"
+                            data-whitespace="['normal','normal','normal','normal']"
+                        
+                            data-type="text" 
+                            data-responsive_offset="on" 
+                            data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
                             
-                        </ul>
-                        <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	
-                    </div>
-                </div>
+                            data-textAlign="['left','left','left','center']"
+                            data-paddingtop="[5,5,5,5]"
+                            data-paddingright="[0,0,0,0]"
+                            data-paddingbottom="[100,100,100,100]"
+                            data-paddingleft="[30,30,30,30]"
+                        
+                            style="z-index: 13; 
+                            white-space: normal; 
+                            font-weight: 900;
+                            color:#fff;
+                            border-width:0px; font-family: 'Montserrat', sans-serif;">BÂTIR AVEC EXCELLENCE, INNOVER POUR DEMAIN.</div>
+                        
+                            <!-- LAYER NR. 4 [ for paragraph] -->
+                            <div class="tp-caption  tp-resizeme" id="slide-902-layer-4"  data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']"  data-y="['middle','middle','middle','middle']" data-voffset="['80','80','50','20']"  data-fontsize="['18','18','20','14']"  data-lineheight="['30','30','30','22']"  data-width="['800','800','900','600']"  data-height="['none','none','none','none']"   data-whitespace="['normal','normal','normal','normal']"  data-type="text"  data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},   {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]'  data-textAlign="['left','left','left','center']"  data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index: 13;  font-weight: 500;  color:#fff;  border-width:0px;font-family: 'Montserrat', sans-serif;">
+                                DIBMAT & BUILD est une entreprise spécialisée dans les travaux d’électricité, intervenant 
+                                aussi bien dans le courant fort que dans l’électricité bâtiment. Forte d’une expertise reconnue 
+                                et d’une équipe de professionnels qualifiés, nous accompagnons particuliers, professionnels et 
+                                collectivités dans la conception, la réalisation et la maintenance de leurs installations électriques.                          
+                                </div>
+                        
+                            <!-- LAYER NR. 5 [ for see all service botton ] -->
+                            <div class="tp-caption tp-resizeme" id="slide-902-layer-5" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']"  data-y="['middle','middle','middle','middle']" data-voffset="['180','180','150','100']"   data-lineheight="['none','none','none','none']"  data-width="['200','200','200','200']"  data-height="['none','none','none','none']"  data-whitespace="['normal','normal','normal','normal']"  data-type="text"   data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]' data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index:13; text-transform:uppercase;">
+                            <a href="{{ route('home.projets') }}" class="site-button btn-hover-animation">DECOUVREZ NOS PROJETS</a>
+                            </div>
+
+                                <!-- LAYER NR. 6 large number -->
+                            <div class="tp-caption tp-resizeme" id="slide-902-layer-6" data-x="['right','right','right','center']" data-hoffset="['40','40','40','0']"  data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','100']" data-fontsize="['400','400','200','100']" data-lineheight="['400','400','200','100']" data-width="['800','800','800','800']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]' data-textAlign="['right','right','right','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13; white-space: normal; font-weight: 900; color:rgba(0,0,0,0);">
+                            <!-- <span class="slider-text-outline" style="font-family: 'Montserrat', sans-serif;text-transform:uppercase;">02</span> -->
+                            </div>  
+
+                                                    
+                        </li>                                
                     
-                <!-- SLIDER END -->
+                        <!-- SLIDE 3 -->
+                        <li data-index="rs-903" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="{{ url('assets/front/images/main-slider/slider2/image3.png' )}}" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{ url('assets/front/images/main-slider/slider2/image3.png' )}}"  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina/>
+                            <!-- LAYERS -->
+                        
+                            <!-- LAYER NR. 1 [ for overlay ] -->
+                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-902-layer-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape" data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[ {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"} ]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index: 1;border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
+                            </div>
+                        
+                            <!-- LAYER NR. 2 [ Small Title ] -->
+                            <div class="tp-caption   tp-resizeme site-text-primary" id="slide-902-layer-2" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-180','-180','-180','-140']" data-fontsize="['20','20','20','20']" data-lineheight="['20','20','20','20']" data-width="['700','700','700','400']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]' data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13; white-space: normal; font-weight: 700; font-family: 'Montserrat', sans-serif;"></div>
+                                                        
+                            <!-- LAYER NR. 3 [ Large Title ] -->
+                            <div class="tp-caption   tp-resizeme" id="slide-902-layer-3" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']"  data-fontsize="['48','48','36','24']" data-lineheight="['64','64','36','24']" data-width="['900','900','700','400']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','center']" data-paddingtop="[5,5,5,5]" data-paddingright="[0,0,0,0]" data-paddingbottom="[100,100,100,100]" data-paddingleft="[30,30,30,30]" style="z-index: 13; white-space: normal; font-weight: 900; color:#fff; border-width:0px; font-family: 'Montserrat', sans-serif;">BÂTIR AVEC EXCELLENCE,INNOVER POUR DEMAIN.</div>
+                        
+                            <!-- LAYER NR. 4 [ for paragraph] -->
+                            <div class="tp-caption  tp-resizeme" id="slide-902-layer-4" data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['80','80','50','20']" data-fontsize="['18','18','20','14']" data-lineheight="['30','30','30','22']" data-width="['800','800','900','600']" data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index: 13; font-weight: 500; color:#fff; border-width:0px;font-family: 'Montserrat', sans-serif;">
+                          Experts en travaux de gros œuvre et second œuvre nous  vous accompagne de l’étude à la réalisation complète de vos projets.
+                        Nous assurons la conception sur mesure, la planification technique et la mise en œuvre clé en main de vos constructions 
+                        ou rénovations, avec un engagement constant pour la qualité, la sécurité et le respect des délais.
+                          
+                            </div>
+                        
+                            <!-- LAYER NR. 5 [ for see all service botton ] -->
+                            <div class="tp-caption tp-resizeme" id="slide-902-layer-5"  data-x="['left','left','left','center']" data-hoffset="['30','50','50','0']" data-y="['middle','middle','middle','middle']" data-voffset="['180','180','150','100']"  data-lineheight="['none','none','none','none']"  data-width="['200','200','200','200']"  data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text"  data-responsive_offset="on" data-frames='[  {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},  {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]' data-textAlign="['left','left','left','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index:13; text-transform:uppercase; white-space: nowrap;">
+                            <a href="{{ route('home.projets') }}" class="site-button btn-hover-animation">DECOUVREZ NOS PROJETS</a>
+                            </div>
+
+                                <!-- LAYER NR. 6 large number -->
+                            <div class="tp-caption tp-resizeme" id="slide-902-layer-6" data-x="['right','right','right','center']" data-hoffset="['40','40','40','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','100']" data-fontsize="['400','400','200','100']" data-lineheight="['400','400','200','100']" data-width="['800','800','800','800']"data-height="['none','none','none','none']" data-whitespace="['normal','normal','normal','normal']" data-type="text" data-responsive_offset="on" data-frames='[ {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"}, {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"} ]'data-textAlign="['right','right','right','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13; white-space: normal; font-weight: 900; color:rgba(0,0,0,0);">
+                            <!-- <span class="slider-text-outline" style="font-family: 'Montserrat', sans-serif;text-transform:uppercase;">02</span> -->
+                            </div>  
+
+                                                    
+                        </li>  
+                        
+                    </ul>
+                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	
+                </div>
+            </div>
+                
+            <!-- SLIDER END -->
 
 
                 <!-- INTRO SECTION START -->
@@ -558,7 +197,7 @@
                                         <div class="wt-small-separator site-text-primary">
                                             <div>DECOUVREZ NOS SERVICES</div>
                                         </div>
-                                        <p class="wt-title">DIBMAT&BUILD est une entreprise de construction,
+                                        <p class="wt-title">DIBMAT & BUILD est une entreprise de construction,
                                             de génie électrique, d’énergie, de climatisation et de prestations
                                             diverses.</p>
                                     </div>
@@ -589,7 +228,7 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="wt-title">
-                                                    <a href="service-detail.html">CONSTRUCTION METALLIQUE, TUYOTERIE ET INSTALLATION D'EQUIPEMENT INDUSTRIELS</a>
+                                                    <a href="">CONSTRUCTION METALLIQUE, TUYAUTERIE ET INSTALLATION D'EQUIPEMENT INDUSTRIELS</a>
                                                 </h4>
                                                 
                                             </div>
@@ -608,7 +247,7 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="wt-title">
-                                                    <a href="service-detail.html">CONSTRUCTION METALLIQUE, TUYOTERIE ET INSTALLATION D'EQUIPEMENT INDUSTRIELS</a>
+                                                    <a href="{{ route('home.service_construction') }}">CONSTRUCTION METALLIQUE, TUYAUTERIE ET INSTALLATION D'EQUIPEMENT INDUSTRIELS</a>
                                                 </h4>
                                             </div>
                                         </div>
@@ -638,8 +277,7 @@
                                                                 <g>
                                                                 </g>
                                                                 <g>
-                                                                </g>
-                                                                <g>
+                                                                </g><g>
                                                                 </g>
                                                                 <g>
                                                                 </g>
@@ -663,7 +301,7 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="wt-title">
-                                                    <a href="service-detail.html">BÂTIMENT</a>
+                                                    <a href="{{ route('home.batiment') }}">BÂTIMENT</a>
                                                 </h4>
                                                 
                                             </div>
@@ -715,7 +353,7 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="wt-title">
-                                                    <a href="service-detail.html">BÂTIMENT</a>
+                                                    <a href="{{ route('home.batiment') }}">BÂTIMENT</a>
                                                 </h4>                                        
                                             </div>
                                         </div>
@@ -811,7 +449,7 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="wt-title text-uppercase">
-                                                    <a href="service-detail.html">Travaux de climatisation</a>
+                                                    <a href="{{ route('home.climatisation') }}">Travaux de climatisation</a>
                                                 </h4>
                                                 
                                             </div>
@@ -903,7 +541,7 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="wt-title text-uppercase">
-                                                    <a href="service-detail.html">Travaux de climatisation</a>
+                                                    <a href="{{ route('home.climatisation') }}">Travaux de climatisation</a>
                                                 </h4>                                        
                                             </div>
                                         </div>
@@ -943,7 +581,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <h4 class="wt-title text-uppercase"><a href="service-detail.html">travaux d’ Électricité et énergie</a></h4>
+                                                <h4 class="wt-title text-uppercase"><a href="{{ route('home.electricite') }}">travaux d’ Électricité et énergie</a></h4>
                                                 
                                             </div>
                                             
@@ -993,7 +631,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <h4 class="wt-title text-uppercase"><a href="service-detail.html">travaux d’ Électricité et énergie</a></h4>
+                                                <h4 class="wt-title text-uppercase"><a href="{{ route('home.electricite') }}">travaux d’ Électricité et énergie</a></h4>
                                             </div>
                                         </div>
                                     </div>
@@ -1036,15 +674,8 @@
                                         
 
                                             <div class="about-one">
-                                                <p>DIBMAT&BUILD est une entreprise de construction,
-                                                    de génie électrique, d’énergie, de climatisation et de prestations
-                                                    diverses. Grâce à son sérieux et à son savoir-faire professionnel
-                                                    depuis sa création, elle va très tôt bénéficier de la
-                                                    confiance de clients privés et publics.
-                                                    
-                                                    S’appuyant sur une équipe d’ingénieurs, de techniciens et
-                                                    d’ouvriers qualifiés et expérimentés ainsi qu’un management
-                                                    de qualité des projets qui lui sont confiés.
+                                                <p>
+                                                DIBMAT & BUILD est une entreprise spécialisée dans la construction, le génie électrique, les solutions énergétiques, le froid, ainsi que dans diverses prestations techniques. Depuis notre création, nous nous sommes imposé comme un acteur de confiance auprès de nos clients privés et publics, grâce à notre sérieux, notre professionnalisme et notre engagement de qualité. Notre force repose sur une équipe pluridisciplinaire composée d’ingénieurs, de techniciens et d’ouvriers qualifiés, tous animés par le souci du travail bien fait. Chaque projet est encadré par un management rigoureux, garantissant le respect des délais, des normes de sécurité, et des exigences spécifiques de nos clients.
                                                 </p>
                                                 <p class="text-uppercase mt-5 site-text-primary">
                                                     <strong style="color: #f57c00;">CE QUI NOUS DIFFERENCIE DES AUTRES</strong>
@@ -1079,7 +710,7 @@
 
                                             
 
-                                            <a href="project-1.html" class="site-buttons btn-hover-animation">En SAVOIR PLUS</a> 
+                                            <a href="{{ route('home.histoire') }}" class="site-buttons btn-hover-animation">En SAVOIR PLUS</a> 
                                     </div>
                                 </div>
                                 
@@ -1089,7 +720,11 @@
                                                 <img src="{{ url('assets/front/images/travaux_2.jpg')}}" alt="">
                                             </div>
                                             <div class="about-max-two-video">
-                                                <p class="ripple center site-text-white">+3 <br> ANS D'EXPERIENCES</p>
+                                                @php
+                                                    $startYear = 2022;
+                                                    $experienceYears = now()->year - $startYear;
+                                                @endphp
+                                                <p class="ripple center site-text-white">+{{ $experienceYears }}  <br> ANS D'EXPERIENCES</p>
                                                 
                                             </div>
                                         </div>
@@ -1123,84 +758,39 @@
                         <!-- TITLE END-->  
                         <div class="s-section">
                             <div class="row">
-                                <!-- COLUMNS 1 --> 
-                                <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
-                                    <div class="service-box-style2">
-
-                                        <div class="service-media">
-                                            <img src="{{ url('assets/front/images/travaux_3.jpg')}}" alt="">
-                                        </div>
-                                        
-                                        <div class="service-content">
-                                            <div class="service-media-hvr" style="background-image:url({{ url('assets/front/images/travaux_3.jpg')}} );"></div>
-                                            <div class="service-content-data">
-                                                <h3 class="service-title-large"><a href="project-single.html">Racordement Electrique</a></h3>
-                                                <p>You can dream, create, design and build the most wonderful place in the world.</p>
-                                                <a href="project-single.html" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="service-content2">
-                                            <h4 class="service-title-large2"><a href="project-single.html">Racordement Electrique</a></h4>
-                                        
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <!-- COLUMNS 2 --> 
-                                <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
-                                    <div class="service-box-style2">
-
-                                        <div class="service-media">
-                                            <img src="{{ url('assets/front/images/travaux_3.jpg')}}" alt="">
-                                        </div>
-                                        
-                                        <div class="service-content">
-                                            <div class="service-media-hvr" style="background-image:url({{ url('assets/front/images/travaux_3.jpg')}} );"></div>
-                                            <div class="service-content-data">
-                                                <h3 class="service-title-large"><a href="project-single.html">Racordement Electrique</a></h3>
-                                                <p>You can dream, create, design and build the most wonderful place in the world.</p>
-                                                <a href="project-single.html" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="service-content2">
-                                            <h4 class="service-title-large2"><a href="project-single.html">Racordement Electrique</a></h4>
-                                        
-                                        </div>
-
-                                    </div>
-                                </div>
                                 
-                                <!-- COLUMNS 3 --> 
-                                <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
-                                    <div class="service-box-style2">
 
-                                        <div class="service-media">
-                                            <img src="{{ url('assets/front/images/travaux_3.jpg')}}" alt="">
-                                        </div>
-                                        
-                                        <div class="service-content">
-                                            <div class="service-media-hvr" style="background-image:url({{ url('assets/front/images/travaux_3.jpg')}} );"></div>
-                                            <div class="service-content-data">
-                                                <h3 class="service-title-large"><a href="project-single.html">Racordement Electrique</a></h3>
-                                                <p>You can dream, create, design and build the most wonderful place in the world.</p>
-                                                <a href="project-single.html" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
+                                @foreach ($projetsRecents as $projetsRecent)
+                                        <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
+                                        <div class="service-box-style2">
+        
+                                            <div class="service-media">
+                                                <img src="{{ url($projetsRecent->image) }}" alt="">
                                             </div>
+                                            
+                                            <div class="service-content">
+                                                <div class="service-media-hvr" style="background-image:url({{ url($projetsRecent->image) }});"></div>
+                                                <div class="service-content-data">
+                                                    <h3 class="service-title-large"><a href="{{ route('projets.detail', $projetsRecent->slug) }}">{{ $projetsRecent->name }}</a></h3>
+                                                    <p>{{ $projetsRecent->description }}</p>
+                                                    <a href="{{ route('projets.detail', $projetsRecent->slug) }}" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
+                                                </div>
+                                            </div>
+        
+                                            <div class="service-content2">
+                                                <h4 class="service-title-large2"><a href="{{ route('projets.detail', $projetsRecent->slug) }}">{{ $projetsRecent->name }}</a></h4>
+                                               
+                                            </div>
+        
                                         </div>
-
-                                        <div class="service-content2">
-                                            <h4 class="service-title-large2"><a href="project-single.html">Racordement Electrique</a></h4>
-                                        
-                                        </div>
-
                                     </div>
-                                </div> 
+                                    @endforeach
+
+                                
                                 
                             </div>
                             <div style="display: flex; justify-content: center; " class="m-b20">
-                                <a href="services.html" class="site-buttons btn-hover-animation boxshadow" style="margin: 0 auto;">
+                                <a href="{{ route('home.projets') }}" class="site-buttons btn-hover-animation boxshadow" style="margin: 0 auto;">
                                 DECOUVREZ NOS PROJETS
                                 </a>
                             </div>
@@ -1286,81 +876,41 @@
                     <div class="container">
                         <div class="section-content">
                             <div class="row d-flex justify-content-center">
-                                <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
+
+                                @foreach ($articlesRecents as $article )
+                                   <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
                                     <!--Block one-->
                                     <div class="blog-post blog-post-4-outer">
                                         <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="blog-single.html"><img src="{{ url('assets/front/images/travaux_2.jpg')}}" alt=""></a>
+                                            <a href="{{route('actualites.show', $article->slug ) }}">
+                                                <div class="img-actu">
+                                                    <img src="{{ url($article->image) }}" alt="articleimg"></a>
+                                                </div>
                                         </div>                                    
                                         <div class="wt-post-info">
                                             <div class="wt-post-meta ">
                                                 <ul>
-                                                    <li class="post-date"><span> Publié le 14/12/2024</span> </li>
+                                                    <li class="post-date"><span> Publié le {{ $article->created_at->format('d/m/y') }}</span> </li>
                                                 </ul>
                                             </div>                                 
                                             <div class="wt-post-title ">
-                                                <h4 class="post-title"><a href="blog-single.html">Bringing A Better Design Process To Your Organization</a></h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit. Aliquam sit amet</p>
+                                                <h4 class="post-title"><a href="{{route('actualites.show', $article->slug ) }}">{{ $article->titre }}</a></h4>
+                                                    <p>{!! Str::limit(strip_tags($article->contenu), 30)  !!}</</p>
                                             </div>
                                             
                                             <div class="wt-post-readmore ">
-                                                <a href="blog-single.html" class="site-button-link ">Lire plus<i class="fa fa-play"></i></a>
+                                                <a href="{{route('actualites.show', $article->slug ) }}" class="site-button-link ">Lire plus<i class="fa fa-play"></i></a>
                                             </div>                                        
                                         </div>                                
                                     </div>
-                                </div>
+                                </div> 
+                                @endforeach
                                 
-                                <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
-                                    <!--Block one-->
-                                    <div class="blog-post blog-post-4-outer">
-                                        <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="blog-single.html"><img src="{{ url('assets/front/images/travaux_2.jpg')}}" alt=""></a>
-                                        </div>                                    
-                                        <div class="wt-post-info">
-                                            <div class="wt-post-meta ">
-                                                <ul>
-                                                    <li class="post-date"><span> Publié le 14/12/2024</span> </li>
-                                                </ul>
-                                            </div>                                 
-                                            <div class="wt-post-title ">
-                                                <h4 class="post-title"><a href="blog-single.html">Bringing A Better Design Process To Your Organization</a></h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit. Aliquam sit amet</p>
-                                            </div>
-                                            
-                                            <div class="wt-post-readmore ">
-                                                <a href="blog-single.html" class="site-button-link ">Lire plus<i class="fa fa-play"></i></a>
-                                            </div>                                        
-                                        </div>                                
-                                    </div>
-                                </div>
                                 
-                                <div class="col-lg-4 col-md-6 col-sm-12 m-b30">
-                                    <!--Block one-->
-                                    <div class="blog-post blog-post-4-outer">
-                                        <div class="wt-post-media wt-img-effect zoom-slow">
-                                            <a href="blog-single.html"><img src=" {{ url('assets/front/images/travaux_2.jpg')}}" alt=""></a>
-                                        </div>                                    
-                                        <div class="wt-post-info">
-                                            <div class="wt-post-meta ">
-                                                <ul>
-                                                    <li class="post-date"><span> Publié le 14/12/2024</span> </li>
-                                                </ul>
-                                            </div>                                 
-                                            <div class="wt-post-title ">
-                                                <h4 class="post-title"><a href="blog-single.html">Bringing A Better Design Process To Your Organization</a></h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipis cing elit. Aliquam sit amet</p>
-                                            </div>
-                                            
-                                            <div class="wt-post-readmore ">
-                                                <a href="blog-single.html" class="site-button-link ">Lire plus<i class="fa fa-play"></i></a>
-                                            </div>                                        
-                                        </div>                                
-                                    </div>
-                                </div>                          
                             </div>
 
                             <div class="text-center m-b30"> 
-                                <a href="blog-single.html" class="site-buttons btn-hover-animation">TOUTE NOTRE ACTUALITE</a> 
+                                <a href="{{ route('home.actualites') }}" class="site-buttons btn-hover-animation">TOUTE NOTRE ACTUALITE</a> 
                             </div>
 
                         </div>

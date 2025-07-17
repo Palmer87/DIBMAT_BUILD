@@ -8,23 +8,6 @@ use Illuminate\Http\Request;
 
 class DevisController extends Controller
 {
-    // Affiche le formulaire public
-    public function create()
-    {
-        return view('devis.create');
-    }
-
-    // Enregistre la demande de devis
-    public function store(DevisRequest $request)
-    {
-        Devis::create($request->validated());
-        notify()->success('Votre demande de devis a bien été envoyée !');
-        // Redirection avec message de succès
-        return redirect()->route('public.devis.create');
-    }
-
-    // Liste des devis pour l'admin
-
 
     // Liste des devis pour l'admin
     public function index()
@@ -34,9 +17,9 @@ class DevisController extends Controller
     }
 
     // Voir un devis en détail (admin)
-    public function show($slug)
+    public function show($id)
     {
-        $devis = Devis::where('slug', $slug)->firstOrFail();
+        $devis = Devis::where('id', $id)->firstOrFail();
         return view('admin.devis.show', compact('devis'));
     }
 

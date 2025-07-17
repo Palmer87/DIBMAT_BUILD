@@ -23,8 +23,9 @@ class ArticleRequest extends FormRequest
     {
         return [
             'titre' => 'required|string|max:255',
-            'contenu' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'categorie' => 'required|string|in:Evènement,Construction,Batiment,Climatisation,Electricité',
+            'content' => 'required|string',
         ];
     }
     /**
@@ -41,8 +42,7 @@ class ArticleRequest extends FormRequest
             'contenu.required' => 'Le contenu est obligatoire.',
             'contenu.string' => 'Le contenu doit être une chaîne de caractères.',
             'image.required' => 'L\'image est obligatoire.',
-            'image.image' => 'Le fichier doit être une image.',
-            'image.mimes' => 'L\'image doit être au format jpeg, png, jpg ou gif.',
+            'image.mimes' => 'L\'image doit être au format jpeg, png, jpg',
             'image.max' => 'L\'image ne peut pas dépasser 2048 Ko.',
         ];
     }

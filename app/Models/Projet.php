@@ -9,31 +9,15 @@ use Illuminate\Support\Str;
 class Projet extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name',
-        'categorie',
-        'description',
-        'client',
-        'lieu',
-        'image',
-        'date',
-    ];
-    protected static function booted()
-    {
-        static::created(function ($projet) {
-            $slug = Str::slug($projet->name) . '-' . $projet->id;
-            if ($projet->slug !== $slug) {
-                $projet->slug = $slug;
-                $projet->saveQuietly(); // évite la boucle infinie
-            }
-        });
 
-        static::updating(function ($projet) {
-            $projet->slug = Str::slug($projet->name) . '-' . $projet->id;
-        });
-    }
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
+    protected $fillable = [
+        'name', 'slug', 'client', 'lieu', 'categorie', 'date', 'description', 'image', 'imagecliche'
+    ];
+
+    protected $casts = [
+        'imagecliche' => 'array', // permet de le manipuler directement comme un tableau
+    ];
+
+
+    
 }

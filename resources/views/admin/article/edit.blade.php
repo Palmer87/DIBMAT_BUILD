@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.backend.base')
 
 @section('title', 'Modifier un article')
 
@@ -43,21 +43,36 @@
                 @method('PUT')
 
                 <!-- Titre -->
-                <div class="mb-3">
-                    <label for="titre" class="form-label">Titre</label>
-                    <input type="text" class="form-control @error('titre') is-invalid @enderror"
-                           id="titre" name="titre" value="{{ old('titre', $article->titre) }}" required>
-                    @error('titre')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+                <div class="mb-3 row">
+                    <div class="col-md-6">
+                        <label for="titre" class="form-label">Titre</label>
+                        <input type="text" class="form-control @error('titre') is-invalid @enderror"
+                            id="titre" name="titre" value="{{ old('titre', $article->titre) }}" required>
+                        @error('titre')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-6">
+                    
+                        <label for="contenu" class="form-label">Categorie</label>
+                        <select class="form-control" name="categorie" id="categorie">
+                            <option disabled selected>Choisir une categorie</option>
+                            <option value="Evènement">Evènement</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Batiment">Bâtiment</option>
+                            <option value="Climatisation">Climatisation</option>
+                            <option value="Electricité">Electricité</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Contenu -->
                 <div class="mb-3">
                     <label for="contenu" class="form-label">Contenu</label>
-                    <textarea class="form-control @error('contenu') is-invalid @enderror"
-                              id="contenu" name="contenu" rows="5" required>{{ old('contenu', $article->contenu) }}</textarea>
-                    @error('contenu')
+                    <div id="editor" style="height: 300px;">{!! old('content', $article->contenu) !!}</div>
+                    <input type="hidden" name="content" id="content" value="{!! old('content', $article->contenu) !!}">
+
+                    @error('content')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
@@ -65,8 +80,7 @@
                 <!-- Image -->
                 <div class="mb-3">
                     <label for="image" class="form-label">Changer l’image (optionnel)</label>
-                    <input class="form-control @error('image') is-invalid @enderror"
-                           type="file" id="image" name="image">
+                    <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -74,7 +88,7 @@
                     @if ($article->image)
                         <div class="mt-2">
                             <p class="text-muted">Image actuelle :</p>
-                            <img src="{{ asset('storage/' . $article->image) }}" alt="Image actuelle" class="img-fluid rounded shadow-sm" style="max-height: 200px;">
+                            <img src="{{ url($article->image) }}" alt="Image actuelle" class="img-fluid rounded shadow-sm" style="max-height: 200px;">
                         </div>
                     @endif
                 </div>

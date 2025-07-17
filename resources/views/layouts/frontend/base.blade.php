@@ -5,16 +5,33 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="keywords" content="" />
-        <meta name="author" content="" />
-        <meta name="robots" content="" />    
         <meta name="description" content="" />
+
+        <title>@yield('title', 'Dibmat & Build - Entreprise de construction en Côte d\'Ivoire')</title>
+        <meta name="description" content="@yield('meta_description', 'Dibmat & Build, votre partenaire pour la construction, la rénovation et l’aménagement en Côte d\'Ivoire. Qualité et expertise.')">
+        <meta name="keywords" content="@yield('meta_keywords', 'construction, rénovation, aménagement, bâtiment, Abidjan, Côte d\'Ivoire, Dibmat & Build')">
+
+        <meta name="author" content="Dibmat & Build" />
+        <meta name="robots" content="" />    
+        
+         <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:title" content="@yield('title', 'Dibmat & Build - Entreprise de construction en Côte d\'Ivoire')">
+        <meta property="og:description" content="@yield('meta_description', 'Dibmat & Build, votre partenaire pour la construction, la rénovation et l’aménagement en Côte d\'Ivoire. Qualité et expertise.')">
+        <meta property="og:image" content="@yield('meta-image', asset('assets/front/images/logo_dibmat.ico'))">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="@yield('title', 'Dibmat & Build - Entreprise de construction en Côte d\'Ivoire')">
+        <meta name="twitter:description" content="@yield('meta_description', 'Dibmat & Build, votre partenaire pour la construction, la rénovation et l’aménagement en Côte d\'Ivoire. Qualité et expertise.')">
+        <meta name="twitter:image" content="@yield('meta-image', asset('assets/front/images/logo_dibmat.ico'))">
+
         <!-- FAVICONS ICON -->
         <link rel="icon" href="{{ url('assets/front/images/logo_dibmat.ico') }}" type="image/x-icon" />
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-        <!-- PAGE TITLE HERE -->
-        <title>DIBMAT & BUILD</title>
         <!-- MOBILE SPECIFIC -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- BOOTSTRAP STYLE SHEET -->
@@ -82,7 +99,7 @@
                         <div class="footer-bottom-info">
 
                             <div class="footer-copy-right">
-                                <span class="copyrights-text">© 2025 Dibmat&Build. conçu par <a href="#" class="site-text-primary">FAC COM</a></span>
+                                <span class="copyrights-text">© 2025 Dibmat & Build. Conçu par <a href="#" class="site-text-primary">Firme Attou & Co</a></span>
                             </div>
                             
                         </div>
@@ -103,6 +120,7 @@
         <script  src="{{ url('assets/front/js/jquery-3.6.0.min.js') }}"></script><!-- JQUERY.MIN JS -->
         <script  src="{{ url('assets/front/js/popper.min.js') }}"></script><!-- POPPER.MIN JS -->
         <script  src="{{ url('assets/front/js/bootstrap.min.js') }}"></script><!-- BOOTSTRAP.MIN JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <script  src="{{ url('assets/front/js/magnific-popup.min.js') }}"></script><!-- MAGNIFIC-POPUP JS -->
         <script  src="{{ url('assets/front/js/waypoints.min.js') }}"></script><!-- WAYPOINTS JS -->

@@ -1,109 +1,104 @@
 @extends('layouts.frontend.base')
 
+@section('title', 'Dibmat & Build — Expert en construction et rénovation en Côte d\'Ivoire')
+@section('meta_description', 'Dibmat & Build vous accompagne dans vos projets de construction, rénovation et aménagement. Qualité, expertise et respect des délais.')
+@section('meta_keywords', 'construction Côte d\'Ivoire, rénovation Abidjan, entreprise bâtiment, aménagement intérieur, Dibmat & Build')
+@section('meta-image', asset('assets/front/images/main-slider/slider2/image3.png'))
+
+
 @section('content')
 
 <div class="page-content">
-
-            <!-- INNER PAGE BANNER -->
-            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(images/main-slider/slider2/image3.png);">
-            	<div class="overlay-main site-bg-black opacity-07"></div>
-                <div class="container">
-                    <div class="wt-bnr-inr-entry">
-                    	<div class="banner-title-outer">
-                        	<div class="banner-title-name">
-                        		<h2 class="wt-title site-text-primary" style="margin-bottom: 10px; color: #F57C00;">DIBMAT & BUILD</h2>
-                                <h2 class="wt-title text-uppercase" style="margin-bottom: 100px;">Decouvrez notre expertise</h2>
-                            </div>
-                        </div>
-                        <!-- BREADCRUMB ROW -->                            
-                        
-                            <div>
-                                <ul class="wt-breadcrumb breadcrumb-style-2">
-                                    <li><a href="index.html">Dibmat & Build</a></li>
-                                    <li>notre expertise</li>
-                                </ul>
-                            </div>
-                        
-                        <!-- BREADCRUMB ROW END -->                        
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url({{ url('assets/front/images/main-slider/slider2/image3.png') }});">
+        <div class="overlay-main site-bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <div class="banner-title-outer">
+                    <div class="banner-title-name">
+                        <h2 class="wt-title site-text-primary" style="margin-bottom: 10px; color: #F57C00;">DIBMAT & BUILD</h2>
+                        <h2 class="wt-title text-uppercase" style="margin-bottom: 100px;">Decouvrez notre expertise</h2>
                     </div>
                 </div>
-            </div>
-            <!-- INNER PAGE BANNER END -->         
-
-
-            <!-- INTRO SECTION START -->
-            <div class="section-full p-t120 p-b90 site-bg-white">
+                <!-- BREADCRUMB ROW -->                            
                         
-                <div class="container">
+                <div>
+                    <ul class="wt-breadcrumb breadcrumb-style-2">
+                        <li><a href="{{ route('home.accueil') }}">Dibmat & Build</a></li>
+                        <li>Notre expertise</li>
+                    </ul>
+                </div>
+                        
+                <!-- BREADCRUMB ROW END -->                        
+            </div>
+        </div>
+    </div>
+    <!-- INNER PAGE BANNER END -->         
 
-                    <!-- TITLE START-->
-                    <div class="wt-separator-two-part">
-                        <div class="row wt-separator-two-part-row">
-                            <div class="col-lg-12 col-md-12 wt-separator-two-part-left">
-                                <!-- TITLE START-->
-                                <div class="section-head center wt-small-separator-outer">
-                                    <div class="wt-small-separator  mb-4">
-                                        <p style="color: black; font-weight: normal; font-size: 16px;">Notre expertise s’étend sur des
-                                             domaines clés pour  répondre à tous vos besoins 
-                                             en construction et en équipements techniques
-                                        </p>
-                                    </div>
-                                    
-                                </div>
-                                <!-- TITLE END-->
+
+    <!-- INTRO SECTION START -->
+    <div class="section-full p-t120 p-b90 site-bg-white">
+        <div class="container">
+            <!-- TITLE START-->
+            <div class="wt-separator-two-part">
+                <div class="row wt-separator-two-part-row">
+                    <div class="col-lg-12 col-md-12 wt-separator-two-part-left">
+                        <!-- TITLE START-->
+                        <div class="section-head center wt-small-separator-outer">
+                            <div class="wt-small-separator  mb-4">
+                                <p style="color: black; font-weight: normal; font-size: 16px;">Notre expertise s’étend sur des domaines clés pour  répondre à tous vos besoins en construction et en équipements techniques
+                                </p>
                             </div>
-                                                        
                         </div>
-                    </div>
-                    <!-- TITLE END-->
-
-
-                    <div class="s-section">
-                        <div class="row">
-                       
-                            <!-- COLUMNS 1 --> 
-                            <div class="col-lg-4 col-md-6  col-sm-6 m-b30">
-                                <div class="square-flip">
-                                    <div class="square shadow-bx">
-                                        <div class="square-container">
-                                            <div class="wt-icon-box-wraper m-b30">
-                                                <div class="icon-lg inline-icon">
-                                                    <span class="icon-cell site-text-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" id="Line" width="100" height="100" fill="#f57c00"  viewBox="0 0 64 64">
-                                                            <path d="m59.98965 22.16718a1.01561 1.01561 0 0 0 -.67492-.91284c-.96673-.21476-38.64923-13.11567-39.72293-13.20152l-14.66106 1.24467a1.022 1.022 0 0 0 -.93074.99741v2.72349a.99906.99906 0 0 0 .53611.8857l5.55637 2.91007v7.01914h-4.53884c-.02307 0-.0423.0116-.06494.01312a1.0273 1.0273 0 0 0 -.935.98686v3.19123a.99942.99942 0 0 0 .3633.77149l32.60484 26.9225a1.03766 1.03766 0 0 0 .89449.19432l20.25392-5.404a.99942.99942 0 0 0 .73923-1.0478l-.375-4.5535a1.07054 1.07054 0 0 0 -.39257-.7148l-6.2987-4.77523.65738-10.54735 6.17452-1.11414a1.00092 1.00092 0 0 0 .82223-.98433c-.00921-.03529.01571-4.57502-.00769-4.60449zm-5.27551-.34312-16.20467 2.3924-29.57233-13.2526 10.61778-.90139zm-48.71424-9.98531 31.36765 14.05683v2.94615l-31.36765-16.42873zm31.90376 19.54107a1.07541 1.07541 0 0 0 .64157.09862l6.89518-1.2442v16.6623c-.00387.00911-33.34473-22.59577-33.348-22.59359v-6.44141zm.06018 17.25766-29.4834-22.80427h2.30537l31.99719 21.68213zm-31.41025-21.76703 30.21341 23.36894.19988 2.42653-30.41329-25.11209zm32.50334 26.80225-.26171-3.17563 18.34093-4.27128.21092 2.56629zm16.67834-9.17345-3.76337.87636.222-3.56123zm-5.79666 1.34985-2.49829.5817v-16.55738l3.5337-.63767zm8.05882-19.91336-18.63 3.36215v-3.18638l18.63-2.75084z"/></svg>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <h4 class="wt-title"><a href="service-detail.html">CONSTRUCTION METALLIQUE, TUYOTERIE ET INSTALLATION D'EQUIPEMENT INDUSTRIELS</a></h4>
-                                            <p>La construction métallique : entrepôts, hangars, charpentes métalliques</p>
-                                            
+                        <!-- TITLE END-->
+                    </div>                                    
+                </div>
+            </div>
+            <!-- TITLE END-->
+            
+            <div class="s-section">
+                <div class="row">
+                    <!-- COLUMNS 1 --> 
+                    <div class="col-lg-4 col-md-6  col-sm-6 m-b30">
+                        <div class="square-flip">
+                            <div class="square shadow-bx">
+                                <div class="square-container">
+                                    <div class="wt-icon-box-wraper m-b30">
+                                        <div class="icon-lg inline-icon">
+                                            <span class="icon-cell site-text-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="Line" width="100" height="100" fill="#f57c00"  viewBox="0 0 64 64">
+                                                    <path d="m59.98965 22.16718a1.01561 1.01561 0 0 0 -.67492-.91284c-.96673-.21476-38.64923-13.11567-39.72293-13.20152l-14.66106 1.24467a1.022 1.022 0 0 0 -.93074.99741v2.72349a.99906.99906 0 0 0 .53611.8857l5.55637 2.91007v7.01914h-4.53884c-.02307 0-.0423.0116-.06494.01312a1.0273 1.0273 0 0 0 -.935.98686v3.19123a.99942.99942 0 0 0 .3633.77149l32.60484 26.9225a1.03766 1.03766 0 0 0 .89449.19432l20.25392-5.404a.99942.99942 0 0 0 .73923-1.0478l-.375-4.5535a1.07054 1.07054 0 0 0 -.39257-.7148l-6.2987-4.77523.65738-10.54735 6.17452-1.11414a1.00092 1.00092 0 0 0 .82223-.98433c-.00921-.03529.01571-4.57502-.00769-4.60449zm-5.27551-.34312-16.20467 2.3924-29.57233-13.2526 10.61778-.90139zm-48.71424-9.98531 31.36765 14.05683v2.94615l-31.36765-16.42873zm31.90376 19.54107a1.07541 1.07541 0 0 0 .64157.09862l6.89518-1.2442v16.6623c-.00387.00911-33.34473-22.59577-33.348-22.59359v-6.44141zm.06018 17.25766-29.4834-22.80427h2.30537l31.99719 21.68213zm-31.41025-21.76703 30.21341 23.36894.19988 2.42653-30.41329-25.11209zm32.50334 26.80225-.26171-3.17563 18.34093-4.27128.21092 2.56629zm16.67834-9.17345-3.76337.87636.222-3.56123zm-5.79666 1.34985-2.49829.5817v-16.55738l3.5337-.63767zm8.05882-19.91336-18.63 3.36215v-3.18638l18.63-2.75084z"/></svg>
+                                                </svg>
+                                            </span>
                                         </div>
-                                        
                                     </div>
-                                    <div class='square2' data-image="images/travaux_4.jpg">
-                                        <div class="square-container2">
-                                            <a href="service-detail.html" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
-                                        </div>
-                                        <div class="flip-overlay"></div>
-                                    </div>
+                                    <h4 class="wt-title"><a href="{{ route('home.service_construction') }}">CONSTRUCTION METALLIQUE, TUYAUTERIE ET INSTALLATION D'EQUIPEMENTS INDUSTRIELS</a></h4>
+                                    <p>La construction métallique : entrepôts, hangars, charpentes métalliques</p>         
                                 </div>
-                            </div> 
+                            </div>
+                            <div class='square2' data-image="{{ url('assets/front/images/travaux_4.jpg') }}">
+                                <div class="square-container2">
+                                    <a href="{{ route('home.service_construction') }}" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
+                                </div>
+                                <div class="flip-overlay"></div>
+                            </div>
+                        </div>
+                    </div> 
 
-                            <!-- COLUMNS 2 --> 
-                            <div class="col-lg-4 col-md-6  col-sm-6 m-b30">
-                                <div class="square-flip">
-                                    <div class="square shadow-bx">
-                                        <div class="square-container">
-                                            <div class="wt-icon-box-wraper m-b30">
-                                                <div class="icon-lg inline-icon">
-                                                    <span class="icon-cell site-text-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" width="100" height="100" stroke="#f57c00" fill="#f57c00" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
-                                                            <g>
-                                                                <g>
-                                                                    <path d="M405.333,362.667V149.333H320V0H149.333v106.667h-128v256H0v64h426.667v-64H405.333z M106.667,362.667H64V320h42.667    V362.667z M106.667,277.333H64v-42.667h42.667V277.333z M106.667,192H64v-42.667h42.667V192z M277.333,362.667H192v-64h85.333    V362.667z M277.333,234.667H192v-64h85.333V234.667z M277.333,106.667H192v-64h85.333V106.667z"/>
-                                                                </g>
-                                                            </g>
+                    <!-- COLUMNS 2 --> 
+                    <div class="col-lg-4 col-md-6  col-sm-6 m-b30">
+                        <div class="square-flip">
+                            <div class="square shadow-bx">
+                                <div class="square-container">
+                                    <div class="wt-icon-box-wraper m-b30">
+                                        <div class="icon-lg inline-icon">
+                                            <span class="icon-cell site-text-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" width="100" height="100" stroke="#f57c00" fill="#f57c00" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+                                                    <g>
+                                                        <g>
+                                                            <path d="M405.333,362.667V149.333H320V0H149.333v106.667h-128v256H0v64h426.667v-64H405.333z M106.667,362.667H64V320h42.667    V362.667z M106.667,277.333H64v-42.667h42.667V277.333z M106.667,192H64v-42.667h42.667V192z M277.333,362.667H192v-64h85.333    V362.667z M277.333,234.667H192v-64h85.333V234.667z M277.333,106.667H192v-64h85.333V106.667z"/>
+                                                        </g>
+                                                    </g>
                                                             <g>
                                                             </g>
                                                             <g>
@@ -138,19 +133,18 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <h4 class="wt-title"><a href="service-detail.html">BÂTIMENT</a></h4>
+                                            <h4 class="wt-title"><a href="{{ route('home.batiment') }}">BÂTIMENT</a></h4>
                                             <p>L’entreprise générale de bâtiment avec l’intervention de l’ensemble
                                                 des corps d’états :
-                                                *Gros- oeuvre (Terrassements, Génie civil, Charpente, Couverture,
-                                                Étanchéité,)
+                                                *Gros-oeuvre (Terrassements, Génie civil, Charpente, Couverture, Étanchéité)
                                             </p>
                                             
                                         </div>
                                         
                                     </div>
-                                    <div class='square2' data-image="images/travaux_3.jpg">
+                                    <div class='square2' data-image="{{ url('assets/front/images/travaux_3.jpg') }}">
                                         <div class="square-container2">
-                                            <a href="service-detail.html" class="site-buttons btn-hover-animation boxshadow">EN SAVOIR PLUS</a>
+                                            <a href="{{ route('home.batiment') }}" class="site-buttons btn-hover-animation boxshadow">EN SAVOIR PLUS</a>
                                         </div>
                                         <div class="flip-overlay"></div>
                                     </div>
@@ -245,7 +239,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <h4 class="wt-title text-uppercase"><a href="service-detail.html">Travaux de climatisation</a></h4>
+                                            <h4 class="wt-title text-uppercase"><a href="{{ route('home.climatisation') }}">Travaux de climatisation</a></h4>
                                             <p>- Etude et exécution de tout travaux de climatisations <br>
                                                 - Que ce soit pour des applications industrielles ou domestiques,
                                                 nous proposons des solutions de
@@ -254,9 +248,9 @@
                                         </div>
                                         
                                     </div>
-                                    <div class='square2' data-image="images/travaux_2.jpg">
+                                    <div class='square2' data-image="{{ url(('assets/front/images/travaux_2.jpg')) }}">
                                         <div class="square-container2">
-                                            <a href="service-detail.html" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
+                                            <a href="{{ route('home.climatisation') }}" class="site-buttons btn-hover-animation boxshadow">En savoir plus</a>
                                         </div>
                                         <div class="flip-overlay"></div>
                                     </div>
@@ -311,19 +305,16 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <h4 class="wt-title text-uppercase"><a href="service-detail.html">travaux d’ Électricité et énergie</a></h4>
-                                            <p>Etude et exécution de projet d’électrification (moyenne tension,
-                                                basse tension, énergie
-                                                renouvelable).
-                                                - Groupes électrogènes : Fourniture, pose et entretien etc.
+                                            <h4 class="wt-title text-uppercase"><a href="{{ route('home.electricite') }}">travaux d’ Électricité et énergie</a></h4>
+                                            <p>Etude et exécution de projet d’électrification (moyenne tension, basse tension, énergie renouvelable).  - Groupes électrogènes : Fourniture, pose et entretien etc.
                                             </p>
                                           
                                         </div>
                                         
                                     </div>
-                                    <div class='square2' data-image="images/travaux_1.jpg">
+                                    <div class='square2' data-image="{{ url('assets/front/images/travaux_1.jpg') }}">
                                         <div class="square-container2">
-                                            <a href="service-detail.html" class="site-buttons btn-hover-animation boxshadow">EN SAVOIR PLUS</a>
+                                            <a href="{{ route('home.electricite') }}" class="site-buttons btn-hover-animation boxshadow">EN SAVOIR PLUS</a>
                                         </div>
                                         <div class="flip-overlay"></div>
                                     </div>
@@ -338,7 +329,7 @@
             <!-- INTRO SECTION END -->  
 
             <!-- CHOOSE US SECTION START -->
-            <div class="section-full p-t120  p-b90 site-bg-white" style="background-image: url('images/background/image-background.png') !important;">
+            <div class="section-full p-t120  p-b90 site-bg-white" style="background-image: url('{{ url('assets/front/images/background/image-background.png') }}') !important;">
                         
                 <div class="container">
         
@@ -368,46 +359,74 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        <span>1. PLUS DE 3ANS D’expérience</span>
+                                        <span>1. Expertise pluridisciplinaire</span>
                                         <span class="accordion-icon"></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body">
-                                        <strong>DIBMAT&BUILD est une entreprise de construction, de génie électrique, d’énergie, de climatisation et de prestations diverses. Grâce à son sérieux et à son savoir-faire
-                                             professionnel depuis sa création,elle va très tôt bénéficier de la confiance de clients privés et publics</strong>
+                                        <strong>
+                                            Grâce à une équipe d’ingénieurs, techniciens et ouvriers qualifiés, nous intervenons
+                                            avec maîtrise sur des projets de construction, d’électricité, d’énergie, de climatisation et bien plus.
+                                        </strong>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        <span> 2. Accordion Item </span>
+                                        <span> 2. Engagement sur les résultats </span>
                                         <span class="accordion-icon"></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                     <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong>
+                                        <strong>
+                                            Nous respectons scrupuleusement nos engagements contractuels :
+                                            <ul style="padding-left: 25px;">
+                                                <li><b>Qualité des prestations</b></li>
+                                                <li><b>Respect des coûts prévus</b></li>
+                                                <li><b>Délais tenus</b></li>
+                                            </ul>
+                                        </strong>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                       <span>3. Accordion Item </span>
+                                       <span>3. Suivi rigoureux des projets</span>
                                         <span class="accordion-icon"></span>
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                                     <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong>
+                                        <strong>
+                                            Chaque mission est encadrée par un management de projet structuré, avec un suivi technique 
+                                            et administratif permanent, pour garantir sérénité et efficacité à nos clients.
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                       <span>4. Références publiques & privées</span>
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body">
+                                        <strong>
+                                            Notre savoir-faire reconnu nous a valu la confiance durable de nombreux partenaires, 
+                                            tant à l'international qu'au plan national dans le secteur privé que dans les administrations publiques.
+                                        </strong>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="m-t20">
-                            <a href="project-1.html" class="site-buttons btn-hover-animation boxshadow">
+                            <a href="{{ route('home.projets') }}" class="site-buttons btn-hover-animation boxshadow">
                               PROJETS REALISES
                             </a>
                           </div>
@@ -427,15 +446,10 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.4992867088854!2d-4.0588241!3d5.340477900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ebcf5c4db451%3A0xcab03beb1052998e!2sGADYS%20INDUSTRIE!5e0!3m2!1sen!2sci!4v1746796179911!5m2!1sen!2sci" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
     
-                        
                     </div>
                 </div>
                 
             </div>   
-
-
-            
-
      
         </div>
 

@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="icon-content">
                                     <h5 class="wt-tilte">Téléphone</h5>
-                                    <p>(+225) 27 35 97 68 19</p>
+                                    <p>(+225) 27 23 49 57 59</p>
                                 </div>
                             </div>
                         </li>
@@ -75,30 +75,30 @@
                     <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-between">
                 
                         <ul class=" nav navbar-nav">
-                            <li class="has-child active">
+                            <li class="has-child {{ Route::is('home.accueil') ? 'active' : '' }}">
                                 <a href="{{ route('home.accueil') }}">DIBMAT & BUILD</a>
                             </li>
 
 
-                            <li class="has-child">
+                            <li class="has-child {{ Route::is('home.histoire') ? 'active' : '' }}">
                                 <a href="{{ route('home.histoire') }}">NOTRE HISTOIRE</a>
                             </li>
 
-                            <li class="has-child">
+                            <li class="has-child {{ Route::is('home.expertise', 'home.service_construction', 'home.batiment', 'home.climatisation', 'home.electricite') ? 'active' : '' }}">
                                 <a href="{{ route('home.expertise') }}">NOTRE EXPERTISE</a>
                             </li>
                 
-                            <li class="has-child">
+                            <li class="has-child {{ Route::is('home.projets', 'projets.detail') ? 'active' : '' }}">
                                 <a href="{{ route('home.projets') }}">PROJETS REALISES</a>       
                             </li>
 
-                            <li class="has-child">
+                            <li class="has-child {{ Route::is('home.contact', 'home.devis') ? 'active' : '' }}">
                                 <a href="{{ route('home.contact') }}">CONTACT</a>
                             </li>
-                            <li class="has-child">
+                            <li class="has-child {{ Route::is('home.actualites', 'actualites.show') ? 'active' : '' }}">
                                 <a href="{{ route('home.actualites') }}">ACTUALITES</a>                    
                             </li>                                                                
-                            <!-- <li><a href="contact.html">Contact</a></li>   -->
+                            
                     
                         </ul>
 

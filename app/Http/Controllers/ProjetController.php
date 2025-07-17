@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\projet;
+use App\Models\Projet;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+
 use Illuminate\Http\Request;
 
 class ProjetController extends Controller
@@ -12,18 +15,11 @@ class ProjetController extends Controller
      */
     public function index(projet $projet)
     {
-        // Retrieve all projects
         $projets = projet::paginate(10);
-        return view("admin.projet.index", ["projets"=> $projets]);
+        return view("admin.projet.index", compact('projets'));
 
     }
-    public function indexpublic(projet $projet)
-    {
-        // Retrieve all projects
-        $projets = projet::paginate(10);
-        return view("projet.index", ["projets"=> $projets]);
 
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -39,96 +35,179 @@ class ProjetController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "name"=> "required",
-            "description"=> "required",
-            "categorie"=> "required",
-            "client"=> "required",
-            "image"=> "image|nullable|max:2048",
-            "date"=> "date|required",
-            "lieu"=> "required",
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'client' => 'required|string|max:255',
+            'lieu' => 'required|string|max:255',
+            'categorie' => 'required|string|max:255',
+            'date' => 'required|date',
+            'description' => 'required|string',
+            'image' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'imagecliche' => 'array|max:6', // max 6 fichiers
+            'imagecliche.*' => 'nullable|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        projet::create([
-            "name"=> $request->name,
-            "description"=> $request->description,
-            "categorie"=> $request->categorie,
-            "client"=> $request->client,
-            "date"=> $request->date,
-            "lieu"=> $request->lieu,
-            "image"=> $request->file('image')->store('projets', 'public'),
+
+        $slug = Str::slug($request->name);
+
+        // Vérifie l'unicité du slug (ajout d'un suffixe si nécessaire)
+        $originalSlug = $slug;
+        $counter = 1;
+        while (Projet::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+        }
+
+
+        // Image principale
+        $imgPrincipal = null;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = 'projet_' . time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/projets/'), $filename);
+            $imgPrincipal = 'uploads/projets/' . $filename;
+        }
+
+        // Clichés multiples
+        $imageCliches = [];
+        if ($request->hasFile('imagecliche')) {
+            foreach ($request->file('imagecliche') as $file) {
+                $filename = 'cliche_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/projets/cliches/'), $filename);
+                $imageCliches[] = 'uploads/projets/cliches/' . $filename;
+            }
+        }
+
+        Projet::create([
+            'name' => $validated['name'],
+            'slug' => $slug,
+            'client' => $validated['client'],
+            'lieu' => $validated['lieu'],
+            'categorie' => $validated['categorie'],
+            'date' => $validated['date'],
+            'description' => $validated['description'],
+            'image' => $imgPrincipal,
+            'imagecliche' => json_encode($imageCliches), // stocké en JSON
         ]);
-        // Redirect with success message
-        notify()->success("Projet créé avec succès");
-        return redirect()->route("projet.index") ;
+
+        return redirect()->route('projets.index')->with('success', 'Projet enregistré avec succès.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($slug)
+    public function show(Projet $projet)
     {
-        // Find the project by slug
-        $projet = projet::where('slug', $slug)->firstOrFail();
-
-        return view("projet.show", ["projet"=> $projet]);
-    }
-    public function showpublic($slug)
-    {
-        // Find the project by slug
-        $projet = projet::where('slug', $slug)->firstOrFail();
-
-        return view("projet.show", compact("projet"));
+        return view("admin.projet.show", compact('projet'));
     }
 
 
-
-
-
-    public function edit(string $name)
+    public function edit(Projet $projet)
     {
-        return view("admin.projet.edit", ["projet"=> projet::find($name)]);
+        return view("admin.projet.edit", compact('projet'));
+    }
+
+   
+
+    public function update(Request $request, Projet $projet)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'client' => 'required|string|max:255',
+            'lieu' => 'required|string|max:255',
+            'categorie' => 'required|string|max:255',
+            'date' => 'required|date',
+            'description' => 'required|string',
+            'image' => 'nullable|mimes:jpeg,png,jpg|max:2048',
+            'imagecliche' => 'nullable|array|max:6',
+            'imagecliche.*' => 'nullable|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        // Slug unique (mis à jour seulement si le nom change)
+        if ($projet->name !== $request->name) {
+            $slug = Str::slug($request->name);
+            $originalSlug = $slug;
+            $counter = 1;
+            while (Projet::where('slug', $slug)->where('id', '!=', $projet->id)->exists()) {
+                $slug = $originalSlug . '-' . $counter;
+                $counter++;
+            }
+            $projet->slug = $slug;
+        }
+
+        // Image principale (si nouvelle image, on remplace)
+        if ($request->hasFile('image')) {
+            // Supprimer l’ancienne image
+            if ($projet->image && File::exists(public_path($projet->image))) {
+                File::delete(public_path($projet->image));
+            }
+
+            $file = $request->file('image');
+            $filename = 'projet_' . time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/projets/'), $filename);
+            $projet->image = 'uploads/projets/' . $filename;
+        }
+
+        // Clichés multiples (si de nouvelles, on remplace toutes)
+        if ($request->hasFile('imagecliche')) {
+            // Supprimer les anciens clichés
+            if ($projet->imagecliche) {
+                foreach (json_decode($projet->imagecliche, true) as $oldCliche) {
+                    if (File::exists(public_path($oldCliche))) {
+                        File::delete(public_path($oldCliche));
+                    }
+                }
+            }
+
+            $imageCliches = [];
+            foreach ($request->file('imagecliche') as $file) {
+                $filename = 'cliche_' . time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/projets/cliches/'), $filename);
+                $imageCliches[] = 'uploads/projets/cliches/' . $filename;
+            }
+
+            $projet->imagecliche = json_encode($imageCliches);
+        }
+
+        // Mise à jour des autres champs
+        $projet->update([
+            'name' => $validated['name'],
+            'client' => $validated['client'],
+            'lieu' => $validated['lieu'],
+            'categorie' => $validated['categorie'],
+            'date' => $validated['date'],
+            'description' => $validated['description'],
+            // 'image' et 'imagecliche' sont déjà mis à jour dans l’objet
+        ]);
+
+        $projet->save();
+
+        return redirect()->route('projets.index')->with('success', 'Projet mis à jour avec succès.');
     }
 
     /**
-     * Update the specified resource in storage.
+     * Remove the specified resource from storage.
      */
- public function update(Request $request, string $id)
-{
-    $request->validate([
-        "name" => "required",
-        "description" => "required",
-        "categorie" => "required",
-        "client" => "required",
-        "date" => "date|required",
-        "lieu" => "required",
-        "image" => "nullable|image|max:2048",
-    ]);
+    public function destroy(Projet $projet)
+    {
+        // Supprimer l’image principale
+        if ($projet->image && File::exists(public_path($projet->image))) {
+            File::delete(public_path($projet->image));
+        }
 
-    $projet = Projet::findOrFail($id);
+        // Supprimer les clichés (images multiples)
+        if ($projet->imagecliche) {
+            foreach (json_decode($projet->imagecliche, true) as $cliche) {
+                if (File::exists(public_path($cliche))) {
+                    File::delete(public_path($cliche));
+                }
+            }
+        }
 
-    $data = $request->only(['name', 'description', 'categorie', 'client', 'date', 'lieu']);
+        // Supprimer l'enregistrement en base
+        $projet->delete();
 
-    if ($request->hasFile('image')) {
-        $imagePath = $request->file('image')->store('projets', 'public');
-        $data['image'] = $imagePath;
+        return redirect()->route('projets.index')->with('success', 'Projet supprimé avec succès.');
     }
-
-    $projet->update($data);
-    notify()->success('Projet modifié avec succès');
-
-    return redirect()->route('projets.index')->with('success', 'Projet modifié avec succès');
-}
-
-/**
- * Remove the specified resource from storage.
- */
-public function destroy(string $id)
-{
-    $projet = Projet::find($id);
-    $projet->delete();
-    notify()->success("Projet supprimé avec succès");
-    return redirect()->route("projets.index")->with("success", "Projet supprimé avec succès");
-}
 
 }

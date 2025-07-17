@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.backend.base')
 
 @section('title', 'Gestion des messages')
 
@@ -6,6 +6,12 @@
 <style>
     .btn-orange {
         background-color: #EC7100;
+        color: white;
+        border: none;
+    }
+
+    .btn-danger {
+        background-color: #a60000;
         color: white;
         border: none;
     }
@@ -38,8 +44,8 @@
         <table class="table table-bordered table-hover bg-white rounded">
             <thead class="table-dark">
                 <tr>
-                    <th>Nom</th>
-                    <th>message</th>
+                    <th>Nom & Prenom</th>
+                    <th>Message</th>
                     <th>Email</th>
                     <th>Date</th>
                     <th>Actions</th>
@@ -48,18 +54,18 @@
             <tbody>
                 @forelse($messages as $message)
                     <tr>
-                        <td>{{ $message->nom }}</td>
+                        <td>{{ $message->nom }} {{ $message->prenom }}</td>
                         <td>{{ $message->message }}</td>
                         <td>{{ $message->email }}</td>
                         <td>{{ $message->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <a href="{{ route('messages.show', [$message->slug,$message->id]) }}" class="btn btn-sm btn-orange me-2">
+                            <a href="{{ route('messages.show', $message->id) }}" class="btn btn-sm btn-orange me-2">
                                 Voir
                             </a>
-                            <form action="{{ route('messages.destroy', [$message->slug,$message->id]) }}" method="POST" class="d-inline">
+                            <form action="{{ route('messages.destroy', $message->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?')">
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?')">
                                     Supprimer
                                 </button>
                         </td>

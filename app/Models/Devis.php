@@ -9,30 +9,21 @@ use Illuminate\Support\Str;
 class Devis extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nom',
-        'prenom',
-        'email',
-        'message',
-        'numero',
+    protected $fillable = ['nom', 'prenom', 'email', 'numero', 'message' ];
+    protected $casts = ['created_at' => 'datetime'];
 
-    ];
-    protected $casts = [
-    'created_at' => 'datetime',
-];
+    // protected static function booted()
+    // {
+    //     static::created(function ($devis) {
+    //         $slug = Str::slug($devis->nom . '-' . $devis->id);
+    //         if ($devis->slug !== $slug) {
+    //             $devis->slug = $slug;
+    //             $devis->saveQuietly(); // évite la boucle infinie
+    //         }
+    //     });
 
-    protected static function booted()
-    {
-        static::created(function ($devis) {
-            $slug = Str::slug($devis->nom . '-' . $devis->id);
-            if ($devis->slug !== $slug) {
-                $devis->slug = $slug;
-                $devis->saveQuietly(); // évite la boucle infinie
-            }
-        });
-
-        static::updating(function ($devis) {
-            $devis->slug = Str::slug($devis->nom . '-' . $devis->id);
-        });
-    }
+    //     static::updating(function ($devis) {
+    //         $devis->slug = Str::slug($devis->nom . '-' . $devis->id);
+    //     });
+    // }
 }
