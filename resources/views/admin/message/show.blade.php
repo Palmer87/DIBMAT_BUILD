@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.backend.base')
 
 @section('title', 'Détails du message')
 
@@ -27,7 +27,9 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <p><strong>Nom :</strong> {{ $message->nom }}</p>
+                        <p><strong>Prenom :</strong> {{ $message->prenom }}</p>
                         <p><strong>Email :</strong> {{ $message->email }}</p>
+                        <p><strong>Telephone :</strong> {{ $message->telephone }}</p>
                         <p><strong>Date :</strong> {{ $message->created_at->format('d/m/Y H:i') }}</p>
                     </div>
 

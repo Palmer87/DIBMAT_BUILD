@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('slug')->unique()->nullable();
             $table->string('prenom');
             $table->string('email');
-            $table->longtext('message');
             $table->string('numero');
+            $table->text('message');
             $table->timestamps();
         });
     }
