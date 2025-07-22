@@ -8,12 +8,14 @@ use App\Models\Article;
 use App\Models\Devis;
 use App\Models\Message;
 use App\Models\Projet;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function accueil()
     {
+      
         $articlesRecents = Article::latest()->take(3)->get();
         $projetsRecents = Projet::latest()->take(3)->get();
 
