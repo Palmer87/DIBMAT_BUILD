@@ -59,7 +59,10 @@
                                         <div class="wt-post-title m-b60">
                                             <h3 class="post-title site-text-primary text-uppercase">{{ $article->titre }}</h3>
                                         </div>
-                                        <img src="{{ url($article->image) }}" alt="">
+                                        <div class="img-actu1">
+                                            <img src="{{ url($article->image) }}" alt="">
+                                        </div>
+                                        
                                         <div class="detail-actu mt-3 d-flex justify-content-between">
                                             <div class="detail-date">
                                                 <div class="date d-flex align-items-center">
@@ -118,21 +121,7 @@
                                     
                                 </div>
 
-                                <!-- TAGS -->
-                                <div class="widget widget_tag_cloud">
-                                        <div class="m-b30">
-                                            <h4 class="widget-title">Categories</h4>
-                                        </div>
-                                        
-                                        <div class="tagcloud">
-                                            <a href="blog-grid.html">Construction</a>
-                                            <a href="blog-grid.html">Factory</a>                                            
-                                            <a href="blog-grid.html">Engineering </a>
-                                            <a href="blog-grid.html">Repairing</a>
-                                            <a href="blog-grid.html">Buildings</a>
-                                            
-                                        </div>
-                                    </div>                                        
+                                                                     
                                 
                             
                             </aside>

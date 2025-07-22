@@ -43,7 +43,7 @@ Route::post('/devis', [HomeController::class, 'devis_store'])->name('devis.store
 
 
 
-Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 
 
 
@@ -69,7 +69,7 @@ Route::middleware('auth')->group(function () {
 // Routes back-office (protégées par auth)
 Route::middleware(['auth'])->prefix('admin')->group(function () {
 
-    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     
     Route ::resource('projets', ProjetController::class);
     
